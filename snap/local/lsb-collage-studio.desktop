@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Collage Studio
+Comment=Create photo collages for social media and print
+Exec=lsb-collage-studio
+Icon=${SNAP}/meta/gui/lsb-collage-studio.svg
+Terminal=false
+Type=Application
+Categories=Graphics;Photography;
+Keywords=collage;photo;social;image;design;
+StartupNotify=true

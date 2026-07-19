@@ -1,0 +1,52 @@
+name: lsb-collage-studio
+title: Collage Studio
+license: MIT
+base: core24
+version: '1.0.0'
+summary: Create polished photo collages for social media and print
+description: |
+  Collage Studio is a desktop-first editor for building photo
+  collages. Choose a layout, drag photos into individual frames, adjust the
+  spacing and corners, then export a high-resolution PNG sized for social
+  media, presentations, or print.
+grade: stable
+confinement: strict
+
+platforms:
+  amd64:
+
+apps:
+  lsb-collage-studio:
+    command: collage_studio
+    extensions: [gnome]
+    plugs:
+      - desktop
+      - desktop-legacy
+      - home
+      - removable-media
+      - unity7
+      - wayland
+      - x11
+    environment:
+      GTK_USE_PORTAL: '1'
+      LD_LIBRARY_PATH: $SNAP/lib:$LD_LIBRARY_PATH
+
+parts:
+  app:
+    plugin: dump
+    source: build/linux/x64/release/bundle
+    organize:
+      collage_studio: collage_studio
+    prime:
+      - collage_studio
+      - data/**
+      - lib/**
+      - lib/libdartjni.so
+
+  desktop-files:
+    plugin: dump
+    source: snap/local
+    organize:
+      lsb-collage-studio.desktop: meta/gui/lsb-collage-studio.desktop
+      lsb-collage-studio.svg: meta/gui/lsb-collage-studio.svg
+
