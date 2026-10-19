@@ -2,7 +2,7 @@ name: lsb-collage-studio
 title: Collage Studio
 license: MIT
 base: core24
-version: '1.0.0'
+version: '2.0.0'
 summary: Create polished photo collages for social media and print
 description: |
   Collage Studio is a desktop-first editor for building photo
