@@ -1,0 +1,57 @@
+# ninja log v7
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/libflutter_linux_gtk.so	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_basic_message_channel.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_binary_codec.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_binary_messenger.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_dart_project.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_engine.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_json_message_codec.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_json_method_codec.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_message_codec.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_method_call.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_method_channel.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_method_codec.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_method_response.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_plugin_registrar.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_plugin_registry.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_standard_message_codec.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_standard_method_codec.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_string_codec.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_value.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_view.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/flutter_linux.h	986b0c1ae6fae5de
+1	16321	1792418563118088728	flutter/_phony_	986b0c1ae6fae5de
+1	16321	1792418563118088728	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/flutter/_phony_	986b0c1ae6fae5de
+16321	16986	1792418579439508415	runner/CMakeFiles/collage_studio.dir/main.cc.o	90d86158ddd1ae8
+16322	16990	1792418579440008676	runner/CMakeFiles/collage_studio.dir/__/flutter/generated_plugin_registrant.cc.o	9d404a4e74182843
+16321	16992	1792418579439106000	plugins/desktop_drop/CMakeFiles/desktop_drop_plugin.dir/desktop_drop_plugin.cc.o	8474f3261340e66c
+16322	17042	1792418579439514522	runner/CMakeFiles/collage_studio.dir/my_application.cc.o	f4249fe005adf919
+16992	17085	1792418580109532002	plugins/desktop_drop/libdesktop_drop_plugin.so	c04998425f8f5f81
+17085	17225	1792418580203282223	intermediates_do_not_run/collage_studio	1e92660cad257c74
+17226	17393	1792418580343615200	CMakeFiles/install.util	880371570147c5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/libflutter_linux_gtk.so	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_basic_message_channel.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_binary_codec.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_binary_messenger.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_dart_project.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_engine.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_json_message_codec.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_json_method_codec.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_message_codec.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_method_call.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_method_channel.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_method_codec.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_method_response.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_plugin_registrar.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_plugin_registry.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_standard_message_codec.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_standard_method_codec.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_string_codec.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_value.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/fl_view.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/flutter_linux/flutter_linux.h	986b0c1ae6fae5de
+3	1984	1792418747601901501	flutter/_phony_	986b0c1ae6fae5de
+3	1984	1792418747601901501	/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/flutter/_phony_	986b0c1ae6fae5de
+1984	2082	1792418749584283584	plugins/desktop_drop/libdesktop_drop_plugin.so	1ac9ce7b3e4a5d08
+2082	2215	1792418749680955740	intermediates_do_not_run/collage_studio	3ad436ecb60d954c
+2216	2367	1792418749814959236	CMakeFiles/install.util	880371570147c5de

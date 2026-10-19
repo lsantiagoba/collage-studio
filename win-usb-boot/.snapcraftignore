@@ -1,0 +1,13 @@
+# Generated Flutter and CMake output must not be copied into Snapcraft's
+# isolated build tree because its caches contain absolute host paths.
+/build/
+/.dart_tool/
+/.pub/
+/.pub-cache/
+/.flutter-plugins-dependencies
+
+# Editor and version-control metadata are not package inputs.
+/.git/
+/.idea/
+/.vscode/
+*.iml

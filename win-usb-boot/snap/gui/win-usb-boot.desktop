@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Win USB Boot
+Comment=Create a bootable Windows USB drive
+Exec=win-usb-boot
+Icon=${SNAP}/meta/gui/win-usb-boot.svg
+Terminal=false
+Type=Application
+Categories=Utility;System;
+Keywords=Windows;USB;ISO;Boot;UEFI;

@@ -1,0 +1,12 @@
+{
+	"InstallScripts" : 
+	[
+		"/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/cmake_install.cmake",
+		"/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/flutter/cmake_install.cmake",
+		"/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/runner/cmake_install.cmake",
+		"/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/plugins/desktop_drop/cmake_install.cmake",
+		"/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/plugins/jni/cmake_install.cmake",
+		"/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/plugins/jni/shared/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

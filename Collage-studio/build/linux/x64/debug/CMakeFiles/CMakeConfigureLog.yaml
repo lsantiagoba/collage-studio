@@ -1,0 +1,3217 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/uname"
+      - "/usr/local/sbin/uname"
+      - "/usr/local/bin/uname"
+      - "/usr/sbin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Linux - 7.0.0-38-generic - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeNinjaFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Program used to build from build.ninja files."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ninja-build"
+      - "ninja"
+      - "samu"
+    candidate_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/ninja-build"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/ninja"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/samu"
+      - "/usr/local/sbin/ninja-build"
+      - "/usr/local/sbin/ninja"
+      - "/usr/local/sbin/samu"
+      - "/usr/local/bin/ninja-build"
+      - "/usr/local/bin/ninja"
+      - "/usr/local/bin/samu"
+      - "/usr/sbin/ninja-build"
+      - "/usr/sbin/ninja"
+      - "/usr/sbin/samu"
+      - "/usr/bin/ninja-build"
+    found: "/usr/bin/ninja"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER"
+    description: "CXX compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "/usr/bin/clang++"
+    candidate_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    found: "/usr/bin/clang++"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/usr/share/cmake-4.2/Modules/"
+    found: "/usr/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/4.2.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ar"
+      - "ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-ar"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-ar"
+      - "/usr/local/sbin/llvm-ar"
+      - "/usr/local/bin/llvm-ar"
+      - "/usr/sbin/llvm-ar"
+      - "/sbin/llvm-ar"
+      - "/bin/llvm-ar"
+      - "/usr/games/llvm-ar"
+      - "/usr/local/games/llvm-ar"
+      - "/snap/bin/llvm-ar"
+      - "/home/leandrosantiagob/.local/bin/llvm-ar"
+    found: "/usr/bin/ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ranlib"
+      - "ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-ranlib"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-ranlib"
+      - "/usr/local/sbin/llvm-ranlib"
+      - "/usr/local/bin/llvm-ranlib"
+      - "/usr/sbin/llvm-ranlib"
+      - "/sbin/llvm-ranlib"
+      - "/bin/llvm-ranlib"
+      - "/usr/games/llvm-ranlib"
+      - "/usr/local/games/llvm-ranlib"
+      - "/snap/bin/llvm-ranlib"
+      - "/home/leandrosantiagob/.local/bin/llvm-ranlib"
+    found: "/usr/bin/ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-strip"
+      - "strip"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-strip"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-strip"
+      - "/usr/local/sbin/llvm-strip"
+      - "/usr/local/bin/llvm-strip"
+      - "/usr/sbin/llvm-strip"
+      - "/sbin/llvm-strip"
+      - "/bin/llvm-strip"
+      - "/usr/games/llvm-strip"
+      - "/usr/local/games/llvm-strip"
+      - "/snap/bin/llvm-strip"
+      - "/home/leandrosantiagob/.local/bin/llvm-strip"
+    found: "/usr/bin/strip"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld.lld"
+      - "ld"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/bin/ld.lld"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/ld.lld"
+      - "/usr/local/sbin/ld.lld"
+      - "/usr/local/bin/ld.lld"
+      - "/usr/sbin/ld.lld"
+      - "/sbin/ld.lld"
+      - "/bin/ld.lld"
+      - "/usr/games/ld.lld"
+      - "/usr/local/games/ld.lld"
+      - "/snap/bin/ld.lld"
+      - "/home/leandrosantiagob/.local/bin/ld.lld"
+    found: "/usr/bin/ld"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-nm"
+      - "nm"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-nm"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-nm"
+      - "/usr/local/sbin/llvm-nm"
+      - "/usr/local/bin/llvm-nm"
+      - "/usr/sbin/llvm-nm"
+      - "/sbin/llvm-nm"
+      - "/bin/llvm-nm"
+      - "/usr/games/llvm-nm"
+      - "/usr/local/games/llvm-nm"
+      - "/snap/bin/llvm-nm"
+      - "/home/leandrosantiagob/.local/bin/llvm-nm"
+    found: "/usr/bin/nm"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-objdump"
+      - "objdump"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-objdump"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-objdump"
+      - "/usr/local/sbin/llvm-objdump"
+      - "/usr/local/bin/llvm-objdump"
+      - "/usr/sbin/llvm-objdump"
+      - "/sbin/llvm-objdump"
+      - "/bin/llvm-objdump"
+      - "/usr/games/llvm-objdump"
+      - "/usr/local/games/llvm-objdump"
+      - "/snap/bin/llvm-objdump"
+      - "/home/leandrosantiagob/.local/bin/llvm-objdump"
+    found: "/usr/bin/objdump"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-objcopy"
+      - "objcopy"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-objcopy"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-objcopy"
+      - "/usr/local/sbin/llvm-objcopy"
+      - "/usr/local/bin/llvm-objcopy"
+      - "/usr/sbin/llvm-objcopy"
+      - "/sbin/llvm-objcopy"
+      - "/bin/llvm-objcopy"
+      - "/usr/games/llvm-objcopy"
+      - "/usr/local/games/llvm-objcopy"
+      - "/snap/bin/llvm-objcopy"
+      - "/home/leandrosantiagob/.local/bin/llvm-objcopy"
+    found: "/usr/bin/objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-readelf"
+      - "readelf"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-readelf"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-readelf"
+      - "/usr/local/sbin/llvm-readelf"
+      - "/usr/local/bin/llvm-readelf"
+      - "/usr/sbin/llvm-readelf"
+      - "/sbin/llvm-readelf"
+      - "/bin/llvm-readelf"
+      - "/usr/games/llvm-readelf"
+      - "/usr/local/games/llvm-readelf"
+      - "/snap/bin/llvm-readelf"
+      - "/home/leandrosantiagob/.local/bin/llvm-readelf"
+    found: "/usr/bin/readelf"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-dlltool"
+      - "dlltool"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-dlltool"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-dlltool"
+      - "/usr/local/sbin/llvm-dlltool"
+      - "/usr/local/bin/llvm-dlltool"
+      - "/usr/sbin/llvm-dlltool"
+      - "/sbin/llvm-dlltool"
+      - "/bin/llvm-dlltool"
+      - "/usr/games/llvm-dlltool"
+      - "/usr/local/games/llvm-dlltool"
+      - "/snap/bin/llvm-dlltool"
+      - "/home/leandrosantiagob/.local/bin/llvm-dlltool"
+      - "/usr/bin/dlltool"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/sbin/dlltool"
+      - "/sbin/dlltool"
+      - "/bin/dlltool"
+      - "/usr/games/dlltool"
+      - "/usr/local/games/dlltool"
+      - "/snap/bin/dlltool"
+      - "/home/leandrosantiagob/.local/bin/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-addr2line"
+      - "addr2line"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-addr2line"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-addr2line"
+      - "/usr/local/sbin/llvm-addr2line"
+      - "/usr/local/bin/llvm-addr2line"
+      - "/usr/sbin/llvm-addr2line"
+      - "/sbin/llvm-addr2line"
+      - "/bin/llvm-addr2line"
+      - "/usr/games/llvm-addr2line"
+      - "/usr/local/games/llvm-addr2line"
+      - "/snap/bin/llvm-addr2line"
+      - "/home/leandrosantiagob/.local/bin/llvm-addr2line"
+    found: "/usr/bin/addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/bin/tapi"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/sbin/tapi"
+      - "/sbin/tapi"
+      - "/bin/tapi"
+      - "/usr/games/tapi"
+      - "/usr/local/games/tapi"
+      - "/snap/bin/tapi"
+      - "/home/leandrosantiagob/.local/bin/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:26 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "LLVM archiver"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ar-21.1"
+      - "llvm-ar-21"
+      - "llvm-ar21"
+      - "llvm-ar"
+    candidate_directories:
+      - "/usr/lib/llvm-21/bin/"
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/lib/llvm-21/bin/llvm-ar-21.1"
+      - "/usr/bin/llvm-ar-21.1"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-ar-21.1"
+      - "/usr/local/sbin/llvm-ar-21.1"
+      - "/usr/local/bin/llvm-ar-21.1"
+      - "/usr/sbin/llvm-ar-21.1"
+      - "/sbin/llvm-ar-21.1"
+      - "/bin/llvm-ar-21.1"
+      - "/usr/games/llvm-ar-21.1"
+      - "/usr/local/games/llvm-ar-21.1"
+      - "/snap/bin/llvm-ar-21.1"
+      - "/home/leandrosantiagob/.local/bin/llvm-ar-21.1"
+      - "/usr/lib/llvm-21/bin/llvm-ar-21"
+    found: "/usr/bin/llvm-ar-21"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:38 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "Generate index for LLVM archive"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ranlib-21.1"
+      - "llvm-ranlib-21"
+      - "llvm-ranlib21"
+      - "llvm-ranlib"
+    candidate_directories:
+      - "/usr/lib/llvm-21/bin/"
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/lib/llvm-21/bin/llvm-ranlib-21.1"
+      - "/usr/bin/llvm-ranlib-21.1"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-ranlib-21.1"
+      - "/usr/local/sbin/llvm-ranlib-21.1"
+      - "/usr/local/bin/llvm-ranlib-21.1"
+      - "/usr/sbin/llvm-ranlib-21.1"
+      - "/sbin/llvm-ranlib-21.1"
+      - "/bin/llvm-ranlib-21.1"
+      - "/usr/games/llvm-ranlib-21.1"
+      - "/usr/local/games/llvm-ranlib-21.1"
+      - "/snap/bin/llvm-ranlib-21.1"
+      - "/home/leandrosantiagob/.local/bin/llvm-ranlib-21.1"
+      - "/usr/lib/llvm-21/bin/llvm-ranlib-21"
+    found: "/usr/bin/llvm-ranlib-21"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS"
+    description: "`clang-scan-deps` dependency scanner"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "clang-scan-deps-21.1"
+      - "clang-scan-deps-21"
+      - "clang-scan-deps21"
+      - "clang-scan-deps"
+    candidate_directories:
+      - "/usr/lib/llvm-21/bin/"
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+    searched_directories:
+      - "/usr/lib/llvm-21/bin/clang-scan-deps-21.1"
+      - "/usr/bin/clang-scan-deps-21.1"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/clang-scan-deps-21.1"
+      - "/usr/local/sbin/clang-scan-deps-21.1"
+      - "/usr/local/bin/clang-scan-deps-21.1"
+      - "/usr/sbin/clang-scan-deps-21.1"
+      - "/sbin/clang-scan-deps-21.1"
+      - "/bin/clang-scan-deps-21.1"
+      - "/usr/games/clang-scan-deps-21.1"
+      - "/usr/local/games/clang-scan-deps-21.1"
+      - "/snap/bin/clang-scan-deps-21.1"
+      - "/home/leandrosantiagob/.local/bin/clang-scan-deps-21.1"
+      - "/usr/lib/llvm-21/bin/clang-scan-deps-21"
+    found: "/usr/bin/clang-scan-deps-21"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-QOryeD"
+      binary: "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-QOryeD"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-21"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-QOryeD'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_603f7
+        [1/2] /usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp
+        Ubuntu clang version 21.1.8 (6ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-21/bin
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-21/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb "-fdebug-compilation-dir=/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-QOryeD" -v "-fcoverage-compilation-dir=/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-QOryeD" -resource-dir /usr/lib/llvm-21/lib/clang/21 -dependency-file CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/x86_64-linux-gnu/c++/15 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/backward -internal-isystem /usr/lib/llvm-21/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15
+         /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/x86_64-linux-gnu/c++/15
+         /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/backward
+         /usr/lib/llvm-21/lib/clang/21/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        [2/2] : && /usr/bin/clang++  -v -Wl,-v CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_603f7   && :
+        Ubuntu clang version 21.1.8 (6ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-21/bin
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_603f7 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.46
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/x86_64-linux-gnu/c++/15]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/backward]
+          add: [/usr/lib/llvm-21/lib/clang/21/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15] ==> [/usr/include/c++/15]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/x86_64-linux-gnu/c++/15] ==> [/usr/include/x86_64-linux-gnu/c++/15]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/backward] ==> [/usr/include/c++/15/backward]
+        collapse include dir [/usr/lib/llvm-21/lib/clang/21/include] ==> [/usr/lib/llvm-21/lib/clang/21/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/15;/usr/include/x86_64-linux-gnu/c++/15;/usr/include/c++/15/backward;/usr/lib/llvm-21/lib/clang/21/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-QOryeD']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_603f7]
+        ignore line: [[1/2] /usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Ubuntu clang version 21.1.8 (6ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-21/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-21/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb "-fdebug-compilation-dir=/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-QOryeD" -v "-fcoverage-compilation-dir=/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-QOryeD" -resource-dir /usr/lib/llvm-21/lib/clang/21 -dependency-file CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/x86_64-linux-gnu/c++/15 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/backward -internal-isystem /usr/lib/llvm-21/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-pc-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/x86_64-linux-gnu/c++/15]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/backward]
+        ignore line: [ /usr/lib/llvm-21/lib/clang/21/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [[2/2] : && /usr/bin/clang++  -v -Wl -v CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_603f7   && :]
+        ignore line: [Ubuntu clang version 21.1.8 (6ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-21/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_603f7 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_603f7] ==> ignore
+          arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
+          arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/15] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/15]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib64] ==> dir [/usr/lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_603f7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o]
+          arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/15] ==> [/usr/lib/gcc/x86_64-linux-gnu/15]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib/x86_64-linux-gnu/Scrt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o;/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/15;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.46
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:517 (find_program)"
+      - "flutter/CMakeLists.txt:24 (find_package)"
+    mode: "program"
+    variable: "PKG_CONFIG_EXECUTABLE"
+    description: "pkg-config executable"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "pkg-config"
+      - "pkgconf"
+    candidate_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/pkg-config"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/pkgconf"
+      - "/usr/local/sbin/pkg-config"
+      - "/usr/local/sbin/pkgconf"
+      - "/usr/local/bin/pkg-config"
+      - "/usr/local/bin/pkgconf"
+      - "/usr/sbin/pkg-config"
+      - "/usr/sbin/pkgconf"
+    found: "/usr/bin/pkg-config"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_gtk-3"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gtk-3"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libgtk-3.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_gdk-3"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gdk-3"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libgdk-3.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_pangocairo-1.0"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "pangocairo-1.0"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_cairo-gobject"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cairo-gobject"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libcairo-gobject.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_gdk_pixbuf-2.0"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gdk_pixbuf-2.0"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_atk-1.0"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "atk-1.0"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libatk-1.0.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_pango-1.0"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "pango-1.0"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libpango-1.0.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_cairo"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cairo"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libcairo.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_harfbuzz"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "harfbuzz"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libharfbuzz.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_gio-2.0"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gio-2.0"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libgio-2.0.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_gobject-2.0"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gobject-2.0"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libgobject-2.0.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_glib-2.0"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "glib-2.0"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libglib-2.0.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:25 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GTK_z"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "z"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libz.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:26 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GLIB_glib-2.0"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "glib-2.0"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libglib-2.0.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:27 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GIO_gio-2.0"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gio-2.0"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libgio-2.0.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:27 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GIO_gobject-2.0"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gobject-2.0"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libgobject-2.0.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake-4.2/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "flutter/CMakeLists.txt:27 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_GIO_glib-2.0"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "glib-2.0"
+    candidate_directories:
+      - "/usr/lib/x86_64-linux-gnu/"
+    found: "/usr/lib/x86_64-linux-gnu/libglib-2.0.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER"
+    description: "C compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "/usr/bin/clang"
+    candidate_directories:
+      - "/usr/bin/"
+    found: "/usr/bin/clang"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/usr/share/cmake-4.2/Modules/"
+    found: "/usr/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/4.2.3/CompilerIdC/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:26 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "LLVM archiver"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ar-21.1"
+      - "llvm-ar-21"
+      - "llvm-ar21"
+      - "llvm-ar"
+    candidate_directories:
+      - "/usr/lib/llvm-21/bin/"
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/usr/lib/llvm-21/bin/llvm-ar-21.1"
+      - "/usr/bin/llvm-ar-21.1"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-ar-21.1"
+      - "/usr/local/sbin/llvm-ar-21.1"
+      - "/usr/local/bin/llvm-ar-21.1"
+      - "/usr/sbin/llvm-ar-21.1"
+      - "/sbin/llvm-ar-21.1"
+      - "/bin/llvm-ar-21.1"
+      - "/usr/games/llvm-ar-21.1"
+      - "/usr/local/games/llvm-ar-21.1"
+      - "/snap/bin/llvm-ar-21.1"
+      - "/home/leandrosantiagob/.local/bin/llvm-ar-21.1"
+      - "/usr/local/bin/llvm-ar-21.1"
+      - "/usr/local/sbin/llvm-ar-21.1"
+      - "/usr/local/llvm-ar-21.1"
+      - "/usr/bin/llvm-ar-21.1"
+      - "/usr/sbin/llvm-ar-21.1"
+      - "/usr/llvm-ar-21.1"
+      - "/bin/llvm-ar-21.1"
+      - "/sbin/llvm-ar-21.1"
+      - "/usr/X11R6/bin/llvm-ar-21.1"
+      - "/usr/X11R6/sbin/llvm-ar-21.1"
+      - "/usr/X11R6/llvm-ar-21.1"
+      - "/usr/pkg/bin/llvm-ar-21.1"
+      - "/usr/pkg/sbin/llvm-ar-21.1"
+      - "/usr/pkg/llvm-ar-21.1"
+      - "/opt/bin/llvm-ar-21.1"
+      - "/opt/sbin/llvm-ar-21.1"
+      - "/opt/llvm-ar-21.1"
+      - "/usr/lib/llvm-21/bin/llvm-ar-21"
+    found: "/usr/bin/llvm-ar-21"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:38 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "Generate index for LLVM archive"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ranlib-21.1"
+      - "llvm-ranlib-21"
+      - "llvm-ranlib21"
+      - "llvm-ranlib"
+    candidate_directories:
+      - "/usr/lib/llvm-21/bin/"
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/usr/lib/llvm-21/bin/llvm-ranlib-21.1"
+      - "/usr/bin/llvm-ranlib-21.1"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/llvm-ranlib-21.1"
+      - "/usr/local/sbin/llvm-ranlib-21.1"
+      - "/usr/local/bin/llvm-ranlib-21.1"
+      - "/usr/sbin/llvm-ranlib-21.1"
+      - "/sbin/llvm-ranlib-21.1"
+      - "/bin/llvm-ranlib-21.1"
+      - "/usr/games/llvm-ranlib-21.1"
+      - "/usr/local/games/llvm-ranlib-21.1"
+      - "/snap/bin/llvm-ranlib-21.1"
+      - "/home/leandrosantiagob/.local/bin/llvm-ranlib-21.1"
+      - "/usr/local/bin/llvm-ranlib-21.1"
+      - "/usr/local/sbin/llvm-ranlib-21.1"
+      - "/usr/local/llvm-ranlib-21.1"
+      - "/usr/bin/llvm-ranlib-21.1"
+      - "/usr/sbin/llvm-ranlib-21.1"
+      - "/usr/llvm-ranlib-21.1"
+      - "/bin/llvm-ranlib-21.1"
+      - "/sbin/llvm-ranlib-21.1"
+      - "/usr/X11R6/bin/llvm-ranlib-21.1"
+      - "/usr/X11R6/sbin/llvm-ranlib-21.1"
+      - "/usr/X11R6/llvm-ranlib-21.1"
+      - "/usr/pkg/bin/llvm-ranlib-21.1"
+      - "/usr/pkg/sbin/llvm-ranlib-21.1"
+      - "/usr/pkg/llvm-ranlib-21.1"
+      - "/opt/bin/llvm-ranlib-21.1"
+      - "/opt/sbin/llvm-ranlib-21.1"
+      - "/opt/llvm-ranlib-21.1"
+      - "/usr/lib/llvm-21/bin/llvm-ranlib-21"
+    found: "/usr/bin/llvm-ranlib-21"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_CLANG_SCAN_DEPS"
+    description: "`clang-scan-deps` dependency scanner"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "clang-scan-deps-21.1"
+      - "clang-scan-deps-21"
+      - "clang-scan-deps21"
+      - "clang-scan-deps"
+    candidate_directories:
+      - "/usr/lib/llvm-21/bin/"
+      - "/usr/bin/"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/usr/lib/llvm-21/bin/clang-scan-deps-21.1"
+      - "/usr/bin/clang-scan-deps-21.1"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/clang-scan-deps-21.1"
+      - "/usr/local/sbin/clang-scan-deps-21.1"
+      - "/usr/local/bin/clang-scan-deps-21.1"
+      - "/usr/sbin/clang-scan-deps-21.1"
+      - "/sbin/clang-scan-deps-21.1"
+      - "/bin/clang-scan-deps-21.1"
+      - "/usr/games/clang-scan-deps-21.1"
+      - "/usr/local/games/clang-scan-deps-21.1"
+      - "/snap/bin/clang-scan-deps-21.1"
+      - "/home/leandrosantiagob/.local/bin/clang-scan-deps-21.1"
+      - "/usr/local/bin/clang-scan-deps-21.1"
+      - "/usr/local/sbin/clang-scan-deps-21.1"
+      - "/usr/local/clang-scan-deps-21.1"
+      - "/usr/bin/clang-scan-deps-21.1"
+      - "/usr/sbin/clang-scan-deps-21.1"
+      - "/usr/clang-scan-deps-21.1"
+      - "/bin/clang-scan-deps-21.1"
+      - "/sbin/clang-scan-deps-21.1"
+      - "/usr/X11R6/bin/clang-scan-deps-21.1"
+      - "/usr/X11R6/sbin/clang-scan-deps-21.1"
+      - "/usr/X11R6/clang-scan-deps-21.1"
+      - "/usr/pkg/bin/clang-scan-deps-21.1"
+      - "/usr/pkg/sbin/clang-scan-deps-21.1"
+      - "/usr/pkg/clang-scan-deps-21.1"
+      - "/opt/bin/clang-scan-deps-21.1"
+      - "/opt/sbin/clang-scan-deps-21.1"
+      - "/opt/clang-scan-deps-21.1"
+      - "/usr/lib/llvm-21/bin/clang-scan-deps-21"
+    found: "/usr/bin/clang-scan-deps-21"
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-vuUh1s"
+      binary: "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-vuUh1s"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-21"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-vuUh1s'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_cde2f
+        [1/2] /usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c
+        Ubuntu clang version 21.1.8 (6ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-21/bin
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-21/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb "-fdebug-compilation-dir=/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-vuUh1s" -v "-fcoverage-compilation-dir=/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-vuUh1s" -resource-dir /usr/lib/llvm-21/lib/clang/21 -dependency-file CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/llvm-21/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/llvm-21/lib/clang/21/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        [2/2] : && /usr/bin/clang  -v -Wl,-v CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o -o cmTC_cde2f   && :
+        Ubuntu clang version 21.1.8 (6ubuntu1)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-21/bin
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_cde2f /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.46
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/llvm-21/lib/clang/21/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/llvm-21/lib/clang/21/include] ==> [/usr/lib/llvm-21/lib/clang/21/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/llvm-21/lib/clang/21/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-vuUh1s']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_cde2f]
+        ignore line: [[1/2] /usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c]
+        ignore line: [Ubuntu clang version 21.1.8 (6ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-21/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-21/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb "-fdebug-compilation-dir=/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-vuUh1s" -v "-fcoverage-compilation-dir=/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/build/linux/x64/debug/CMakeFiles/CMakeScratch/TryCompile-vuUh1s" -resource-dir /usr/lib/llvm-21/lib/clang/21 -dependency-file CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/llvm-21/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-pc-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/llvm-21/lib/clang/21/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [[2/2] : && /usr/bin/clang  -v -Wl -v CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o -o cmTC_cde2f   && :]
+        ignore line: [Ubuntu clang version 21.1.8 (6ubuntu1)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-21/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_cde2f /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_cde2f] ==> ignore
+          arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
+          arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/15] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/15]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib64] ==> dir [/usr/lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_cde2f.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o]
+          arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/15] ==> [/usr/lib/gcc/x86_64-linux-gnu/15]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/lib/x86_64-linux-gnu/Scrt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o;/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/15;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:8 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.46
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindJNI.cmake:538 (find_library)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:20 (find_package)"
+    mode: "library"
+    variable: "JAVA_JVM_LIBRARY"
+    description: "Java Virtual Machine library"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "jvm"
+    candidate_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+      - "/usr/local/lib/x86_64-linux-gnu/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/x86_64-linux-gnu/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/lib/x86_64-linux-gnu/"
+      - "/lib/"
+      - "/usr/X11R6/lib/x86_64-linux-gnu/"
+      - "/usr/X11R6/lib/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/lib/x86_64-linux-gnu/"
+      - "/usr/pkg/lib/"
+      - "/usr/pkg/"
+      - "/opt/lib/x86_64-linux-gnu/"
+      - "/opt/lib/"
+      - "/opt/"
+      - "/usr/lib/X11/"
+    searched_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+      - "/usr/local/lib/x86_64-linux-gnu/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/x86_64-linux-gnu/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/lib/x86_64-linux-gnu/"
+      - "/lib/"
+      - "/usr/X11R6/lib/x86_64-linux-gnu/"
+      - "/usr/X11R6/lib/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/lib/x86_64-linux-gnu/"
+      - "/usr/pkg/lib/"
+      - "/usr/pkg/"
+      - "/opt/lib/x86_64-linux-gnu/"
+      - "/opt/lib/"
+      - "/opt/"
+      - "/usr/lib/X11/"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindJNI.cmake:566 (find_path)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:20 (find_package)"
+    mode: "path"
+    variable: "JAVA_INCLUDE_PATH"
+    description: "JNI include directory"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "jni.h"
+    candidate_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+      - "/usr/local/include/x86_64-linux-gnu/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/x86_64-linux-gnu/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/x86_64-linux-gnu/"
+      - "/include/"
+      - "/usr/X11R6/include/x86_64-linux-gnu/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/x86_64-linux-gnu/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/x86_64-linux-gnu/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+    searched_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/jni.h"
+      - "/usr/local/sbin/jni.h"
+      - "/usr/local/bin/jni.h"
+      - "/usr/sbin/jni.h"
+      - "/usr/bin/jni.h"
+      - "/sbin/jni.h"
+      - "/bin/jni.h"
+      - "/usr/games/jni.h"
+      - "/usr/local/games/jni.h"
+      - "/snap/bin/jni.h"
+      - "/home/leandrosantiagob/.local/bin/jni.h"
+      - "/usr/local/include/x86_64-linux-gnu/jni.h"
+      - "/usr/local/include/jni.h"
+      - "/usr/local/jni.h"
+      - "/usr/include/x86_64-linux-gnu/jni.h"
+      - "/usr/include/jni.h"
+      - "/usr/jni.h"
+      - "/include/x86_64-linux-gnu/jni.h"
+      - "/include/jni.h"
+      - "/usr/X11R6/include/x86_64-linux-gnu/jni.h"
+      - "/usr/X11R6/include/jni.h"
+      - "/usr/X11R6/jni.h"
+      - "/usr/pkg/include/x86_64-linux-gnu/jni.h"
+      - "/usr/pkg/include/jni.h"
+      - "/usr/pkg/jni.h"
+      - "/opt/include/x86_64-linux-gnu/jni.h"
+      - "/opt/include/jni.h"
+      - "/opt/jni.h"
+      - "/usr/include/X11/jni.h"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindJNI.cmake:606 (find_path)"
+      - "flutter/ephemeral/.plugin_symlinks/jni/src/CMakeLists.txt:20 (find_package)"
+    mode: "path"
+    variable: "JAVA_INCLUDE_PATH2"
+    description: "jni_md.h jniport.h include directory"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "jni_md.h"
+      - "jniport.h"
+    candidate_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/leandrosantiagob/.local/bin/"
+      - "/usr/local/include/x86_64-linux-gnu/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/x86_64-linux-gnu/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/x86_64-linux-gnu/"
+      - "/include/"
+      - "/usr/X11R6/include/x86_64-linux-gnu/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/x86_64-linux-gnu/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/x86_64-linux-gnu/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/darwin/"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/win32/"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/linux/"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/freebsd/"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/openbsd/"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/solaris/"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/hp-ux/"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/alpha/"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/aix/"
+    searched_directories:
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/jni_md.h"
+      - "/usr/local/sbin/jni_md.h"
+      - "/usr/local/bin/jni_md.h"
+      - "/usr/sbin/jni_md.h"
+      - "/usr/bin/jni_md.h"
+      - "/sbin/jni_md.h"
+      - "/bin/jni_md.h"
+      - "/usr/games/jni_md.h"
+      - "/usr/local/games/jni_md.h"
+      - "/snap/bin/jni_md.h"
+      - "/home/leandrosantiagob/.local/bin/jni_md.h"
+      - "/usr/local/include/x86_64-linux-gnu/jni_md.h"
+      - "/usr/local/include/jni_md.h"
+      - "/usr/local/jni_md.h"
+      - "/usr/include/x86_64-linux-gnu/jni_md.h"
+      - "/usr/include/jni_md.h"
+      - "/usr/jni_md.h"
+      - "/include/x86_64-linux-gnu/jni_md.h"
+      - "/include/jni_md.h"
+      - "/usr/X11R6/include/x86_64-linux-gnu/jni_md.h"
+      - "/usr/X11R6/include/jni_md.h"
+      - "/usr/X11R6/jni_md.h"
+      - "/usr/pkg/include/x86_64-linux-gnu/jni_md.h"
+      - "/usr/pkg/include/jni_md.h"
+      - "/usr/pkg/jni_md.h"
+      - "/opt/include/x86_64-linux-gnu/jni_md.h"
+      - "/opt/include/jni_md.h"
+      - "/opt/jni_md.h"
+      - "/usr/include/X11/jni_md.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/jni_md.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/darwin/jni_md.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/win32/jni_md.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/linux/jni_md.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/freebsd/jni_md.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/openbsd/jni_md.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/solaris/jni_md.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/hp-ux/jni_md.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/alpha/jni_md.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/aix/jni_md.h"
+      - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin/jniport.h"
+      - "/usr/local/sbin/jniport.h"
+      - "/usr/local/bin/jniport.h"
+      - "/usr/sbin/jniport.h"
+      - "/usr/bin/jniport.h"
+      - "/sbin/jniport.h"
+      - "/bin/jniport.h"
+      - "/usr/games/jniport.h"
+      - "/usr/local/games/jniport.h"
+      - "/snap/bin/jniport.h"
+      - "/home/leandrosantiagob/.local/bin/jniport.h"
+      - "/usr/local/include/x86_64-linux-gnu/jniport.h"
+      - "/usr/local/include/jniport.h"
+      - "/usr/local/jniport.h"
+      - "/usr/include/x86_64-linux-gnu/jniport.h"
+      - "/usr/include/jniport.h"
+      - "/usr/jniport.h"
+      - "/include/x86_64-linux-gnu/jniport.h"
+      - "/include/jniport.h"
+      - "/usr/X11R6/include/x86_64-linux-gnu/jniport.h"
+      - "/usr/X11R6/include/jniport.h"
+      - "/usr/X11R6/jniport.h"
+      - "/usr/pkg/include/x86_64-linux-gnu/jniport.h"
+      - "/usr/pkg/include/jniport.h"
+      - "/usr/pkg/jniport.h"
+      - "/opt/include/x86_64-linux-gnu/jniport.h"
+      - "/opt/include/jniport.h"
+      - "/opt/jniport.h"
+      - "/usr/include/X11/jniport.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/jniport.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/darwin/jniport.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/win32/jniport.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/linux/jniport.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/freebsd/jniport.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/openbsd/jniport.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/solaris/jniport.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/hp-ux/jniport.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/alpha/jniport.h"
+      - "/mnt/c486a0a5-4bf5-47c8-b47c-1c40bdb2041f/Projects/Software/Desktop Apps/Flutter/Collage-studio/linux/flutter/ephemeral/.plugin_symlinks/jni/src/JAVA_INCLUDE_PATH-NOTFOUND/aix/jniport.h"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/leandrosantiagob/.nvm/versions/node/v24.22.0/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/leandrosantiagob/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...

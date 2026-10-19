@@ -1,0 +1,46 @@
+name: win-usb-boot
+version: '1.0.0'
+summary: Create bootable Windows USB drives
+description: |
+  A friendly desktop tool for creating bootable Windows USB drives from ISO
+  images. It supports UEFI/GPT and legacy MBR media and automatically splits
+  Windows WIM images when required by FAT32.
+
+base: core24
+grade: stable
+confinement: classic
+
+platforms:
+  amd64:
+  arm64:
+
+apps:
+  win-usb-boot:
+    command: win_usb_boot
+    plugs:
+      - desktop
+      - desktop-legacy
+      - gsettings
+      - home
+      - opengl
+      - removable-media
+      - wayland
+      - x11
+
+parts:
+  win-usb-boot:
+    source: .
+    plugin: flutter
+    flutter-channel: stable
+    flutter-target: lib/main.dart
+    override-pull: |
+      craftctl default
+      rm -rf "$CRAFT_PART_SRC/build" "$CRAFT_PART_SRC/.dart_tool"
+    stage-packages:
+      # Runtime tools used by the Linux writing engine.
+      - parted
+      - dosfstools
+      - rsync
+      - util-linux
+      # Provides wimlib-imagex for install.wim files larger than 4 GiB.
+      - wimtools

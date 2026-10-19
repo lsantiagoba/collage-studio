@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#2563EB"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Rounded USB symbol matching the icon shown in the app header. -->
+    <path d="M256 160v186"/>
+    <path d="M256 272l-68-47"/>
+    <path d="M256 238l72-48v36"/>
+  </g>
+  <path d="M256 104l-42 62h84z" fill="#FFFFFF"/>
+  <circle cx="188" cy="225" r="25" fill="#FFFFFF"/>
+  <rect x="305" y="164" width="46" height="46" rx="10" fill="#FFFFFF"/>
+  <circle cx="256" cy="365" r="31" fill="#FFFFFF"/>
+</svg>
