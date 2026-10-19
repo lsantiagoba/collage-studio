@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:cross_file/cross_file.dart';
@@ -6,18 +7,18 @@ import 'package:desktop_drop/desktop_drop.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'l10n/generated/app_localizations.dart';
+import 'src/custom_layout_editor.dart';
+import 'src/layout.dart';
+import 'src/theme.dart';
+
+export 'src/layout.dart';
 
 void main() => runApp(const CollageApp());
-
-const ink = Color(0xFF111318);
-const panel = Color(0xFF191C22);
-const stroke = Color(0xFF2A2E36);
-const lime = Color(0xFFC8FF3D);
-const muted = Color(0xFF9297A3);
 
 enum PhotoEffectPreset { normal, sepia, blue, custom }
 
@@ -141,13 +142,7 @@ class _CollageAppState extends State<CollageApp> {
   }
 }
 
-class LayoutTemplate {
-  const LayoutTemplate(this.name, this.cells);
-  final String name;
-  final List<Rect> cells;
-}
-
-const templates = <LayoutTemplate>[
+final templates = <LayoutTemplate>[
   LayoutTemplate('Single', [Rect.fromLTWH(0, 0, 1, 1)]),
   LayoutTemplate('Duo', [
     Rect.fromLTWH(0, 0, .5, 1),
@@ -196,6 +191,15 @@ const templates = <LayoutTemplate>[
     Rect.fromLTWH(0, .65, .5, .35),
     Rect.fromLTWH(.5, .65, .5, .35),
   ]),
+  // A 2-3-2 flower of seven hexagons.
+  const CustomGridSpec(
+    id: 'honeycomb',
+    name: 'Honeycomb',
+    pattern: GridPattern.honeycomb,
+    rows: 3,
+    columns: 3,
+    order: [1, 2, 3, 4, 5, 7, 8],
+  ).toTemplate(custom: false),
   LayoutTemplate('Grid 6', [
     Rect.fromLTWH(0, 0, 1 / 3, .5),
     Rect.fromLTWH(1 / 3, 0, 1 / 3, .5),
@@ -277,6 +281,7 @@ String _layoutName(AppLocalizations s, String name) => switch (name) {
   'Editorial' => s.editorial,
   'Filmstrip' => s.filmstrip,
   'Mosaic' => s.mosaic,
+  'Honeycomb' => s.honeycomb,
   'Grid 6' => s.grid6,
   _ => name,
 };
@@ -311,41 +316,213 @@ class CollageStudio extends StatefulWidget {
   State<CollageStudio> createState() => _CollageStudioState();
 }
 
+/// Everything undo/redo can restore.
+class _Snapshot {
+  const _Snapshot({
+    required this.templateId,
+    required this.preset,
+    required this.gap,
+    required this.radius,
+    required this.background,
+    required this.photos,
+    required this.slots,
+    required this.effects,
+  });
+  final String templateId;
+  final int preset;
+  final double gap;
+  final double radius;
+  final Color background;
+  final List<String> photos;
+  final List<String?> slots;
+  final List<PhotoEffect> effects;
+}
+
+/// Drag payload for moving a placed photo to another frame.
+class _SlotDrag {
+  const _SlotDrag(this.index);
+  final int index;
+}
+
+const _defaultTemplateId = 'Grid 4';
+const _historyLimit = 100;
+
 class _CollageStudioState extends State<CollageStudio> {
   final GlobalKey _canvasKey = GlobalKey();
-  int _template = 6;
+  final _layoutStore = const CustomLayoutStore();
+  String _templateId = _defaultTemplateId;
+  List<CustomGridSpec> _customSpecs = [];
+  List<LayoutTemplate> _customTemplates = [];
   int _preset = 0;
   double _gap = 10;
   double _radius = 8;
   Color _background = const Color(0xFFF3F0E8);
-  final List<String> _photos = [];
+  List<String> _photos = [];
   List<String?> _slots = List.filled(4, null);
   List<PhotoEffect> _effects = List.filled(4, _normalEffect);
   int? _selectedSlot;
   bool _dragging = false;
   bool _exporting = false;
+  final List<_Snapshot> _undoStack = [];
+  final List<_Snapshot> _redoStack = [];
 
-  LayoutTemplate get layout => templates[_template];
+  LayoutTemplate get layout =>
+      _findTemplate(_templateId) ?? _findTemplate(_defaultTemplateId)!;
   ExportPreset get preset => presets[_preset];
 
-  void _selectTemplate(int index) {
-    final old = _slots;
-    final oldEffects = _effects;
+  LayoutTemplate? _findTemplate(String id) {
+    for (final template in [...templates, ..._customTemplates]) {
+      if (template.id == id) return template;
+    }
+    return null;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _loadCustomLayouts();
+  }
+
+  Future<void> _loadCustomLayouts() async {
+    final specs = await _layoutStore.load();
+    if (!mounted || specs.isEmpty) return;
     setState(() {
-      _template = index;
-      _slots = List<String?>.generate(
-        templates[index].cells.length,
-        (i) => i < old.length ? old[i] : null,
-      );
-      _effects = List<PhotoEffect>.generate(
-        templates[index].cells.length,
-        (i) => i < oldEffects.length ? oldEffects[i] : _normalEffect,
-      );
-      if (_selectedSlot != null && _selectedSlot! >= _slots.length) {
-        _selectedSlot = null;
-      }
+      _setCustomSpecs(specs);
+      _fitSlotsToLayout();
     });
   }
+
+  void _setCustomSpecs(List<CustomGridSpec> specs) {
+    _customSpecs = specs;
+    _customTemplates = [for (final spec in specs) spec.toTemplate()];
+  }
+
+  /// Resizes the per-cell lists to the current layout, keeping entries by
+  /// index.
+  void _fitSlotsToLayout() {
+    final count = layout.cells.length;
+    final old = _slots;
+    final oldEffects = _effects;
+    _slots = List<String?>.generate(
+      count,
+      (i) => i < old.length ? old[i] : null,
+    );
+    _effects = List<PhotoEffect>.generate(
+      count,
+      (i) => i < oldEffects.length ? oldEffects[i] : _normalEffect,
+    );
+    final selected = _selectedSlot;
+    if (selected != null && (selected >= count || _slots[selected] == null)) {
+      _selectedSlot = null;
+    }
+  }
+
+  // --- Undo / redo -------------------------------------------------------
+
+  _Snapshot _snapshot() => _Snapshot(
+    templateId: _templateId,
+    preset: _preset,
+    gap: _gap,
+    radius: _radius,
+    background: _background,
+    photos: List.of(_photos),
+    slots: List.of(_slots),
+    effects: List.of(_effects),
+  );
+
+  /// Saves the current state so the next change can be undone. Call before
+  /// mutating.
+  void _record() {
+    _undoStack.add(_snapshot());
+    if (_undoStack.length > _historyLimit) _undoStack.removeAt(0);
+    _redoStack.clear();
+  }
+
+  void _restore(_Snapshot s) {
+    _templateId = s.templateId;
+    _preset = s.preset;
+    _gap = s.gap;
+    _radius = s.radius;
+    _background = s.background;
+    _photos = List.of(s.photos);
+    _slots = List.of(s.slots);
+    _effects = List.of(s.effects);
+    // The snapshot may point at a custom layout that was deleted or edited.
+    _fitSlotsToLayout();
+  }
+
+  void _undo() {
+    if (_undoStack.isEmpty) return;
+    setState(() {
+      _redoStack.add(_snapshot());
+      _restore(_undoStack.removeLast());
+    });
+  }
+
+  void _redo() {
+    if (_redoStack.isEmpty) return;
+    setState(() {
+      _undoStack.add(_snapshot());
+      _restore(_redoStack.removeLast());
+    });
+  }
+
+  // --- Layouts -----------------------------------------------------------
+
+  void _selectTemplate(LayoutTemplate template) {
+    if (template.id == _templateId) return;
+    _record();
+    setState(() {
+      _templateId = template.id;
+      _fitSlotsToLayout();
+    });
+  }
+
+  Future<void> _editCustomLayout([CustomGridSpec? existing]) async {
+    final strings = AppLocalizations.of(context)!;
+    final initial =
+        existing ??
+        CustomGridSpec(
+          id: DateTime.now().microsecondsSinceEpoch.toString(),
+          name: '${strings.defaultLayoutName} ${_customSpecs.length + 1}',
+          pattern: GridPattern.honeycomb,
+          rows: 3,
+          columns: 3,
+          order: const [1, 2, 3, 4, 5, 7, 8],
+        );
+    final spec = await showDialog<CustomGridSpec>(
+      context: context,
+      builder: (_) =>
+          CustomLayoutEditor(initial: initial, isNew: existing == null),
+    );
+    if (spec == null || !mounted) return;
+    _record();
+    setState(() {
+      final specs = [..._customSpecs];
+      final index = specs.indexWhere((s) => s.id == spec.id);
+      if (index >= 0) {
+        specs[index] = spec;
+      } else {
+        specs.add(spec);
+      }
+      _setCustomSpecs(specs);
+      _templateId = 'custom:${spec.id}';
+      _fitSlotsToLayout();
+    });
+    _layoutStore.save(_customSpecs);
+  }
+
+  void _deleteCustomLayout(CustomGridSpec spec) {
+    _record();
+    setState(() {
+      _setCustomSpecs([..._customSpecs]..removeWhere((s) => s.id == spec.id));
+      if (_templateId == 'custom:${spec.id}') _templateId = _defaultTemplateId;
+      _fitSlotsToLayout();
+    });
+    _layoutStore.save(_customSpecs);
+  }
+
+  // --- Photos ------------------------------------------------------------
 
   Future<void> _pickPhotos() async {
     final result = await FilePicker.pickFiles(
@@ -359,6 +536,7 @@ class _CollageStudioState extends State<CollageStudio> {
   void _addPhotos(Iterable<String> paths) {
     final valid = paths.where((p) => File(p).existsSync()).toList();
     if (valid.isEmpty) return;
+    _record();
     setState(() {
       for (final path in valid) {
         if (!_photos.contains(path)) _photos.add(path);
@@ -368,33 +546,46 @@ class _CollageStudioState extends State<CollageStudio> {
     });
   }
 
-  void _setSlot(int index, String path) => setState(() {
-    _slots[index] = path;
-    _selectedSlot = index;
-  });
-
-  void _setEffectPreset(PhotoEffectPreset preset) {
-    final index = _selectedSlot;
-    if (index == null || _slots[index] == null) return;
+  void _setSlot(int index, String path) {
+    _record();
     setState(() {
-      _effects[index] = switch (preset) {
-        PhotoEffectPreset.normal => _normalEffect,
-        PhotoEffectPreset.sepia => _sepiaEffect,
-        PhotoEffectPreset.blue => _blueEffect,
-        PhotoEffectPreset.custom => _effects[index].copyWith(preset: preset),
-      };
+      _slots[index] = path;
+      _selectedSlot = index;
     });
   }
 
-  void _updateEffect(PhotoEffect effect) {
+  /// Swaps the photos (and their effects) in two frames.
+  void _moveSlot(int from, int to) {
+    if (from == to) return;
+    _record();
+    setState(() {
+      final photo = _slots[from];
+      _slots[from] = _slots[to];
+      _slots[to] = photo;
+      final effect = _effects[from];
+      _effects[from] = _effects[to];
+      _effects[to] = effect;
+      _selectedSlot = to;
+    });
+  }
+
+  void _clearSlot(int index) {
+    if (_slots[index] == null) return;
+    _record();
+    setState(() {
+      _slots[index] = null;
+      _effects[index] = _normalEffect;
+      if (_selectedSlot == index) _selectedSlot = null;
+    });
+  }
+
+  void _clearSelectedSlot() {
     final index = _selectedSlot;
-    if (index == null || _slots[index] == null) return;
-    setState(
-      () => _effects[index] = effect.copyWith(preset: PhotoEffectPreset.custom),
-    );
+    if (index != null) _clearSlot(index);
   }
 
   void _removePhoto(String path) {
+    _record();
     setState(() {
       _photos.remove(path);
       for (var i = 0; i < _slots.length; i++) {
@@ -405,6 +596,43 @@ class _CollageStudioState extends State<CollageStudio> {
         }
       }
     });
+  }
+
+  // --- Settings ----------------------------------------------------------
+
+  void _setEffectPreset(PhotoEffectPreset preset) {
+    final index = _selectedSlot;
+    if (index == null || _slots[index] == null) return;
+    _record();
+    setState(() {
+      _effects[index] = switch (preset) {
+        PhotoEffectPreset.normal => _normalEffect,
+        PhotoEffectPreset.sepia => _sepiaEffect,
+        PhotoEffectPreset.blue => _blueEffect,
+        PhotoEffectPreset.custom => _effects[index].copyWith(preset: preset),
+      };
+    });
+  }
+
+  /// Slider drags record history once, when the drag starts.
+  void _updateEffect(PhotoEffect effect) {
+    final index = _selectedSlot;
+    if (index == null || _slots[index] == null) return;
+    setState(
+      () => _effects[index] = effect.copyWith(preset: PhotoEffectPreset.custom),
+    );
+  }
+
+  void _setPreset(int value) {
+    if (value == _preset) return;
+    _record();
+    setState(() => _preset = value);
+  }
+
+  void _setBackground(Color value) {
+    if (value == _background) return;
+    _record();
+    setState(() => _background = value);
   }
 
   Future<void> _export() async {
@@ -420,6 +648,7 @@ class _CollageStudioState extends State<CollageStudio> {
       final scale = (preset.width / logicalWidth).clamp(1.0, 6.0);
       final image = await boundary.toImage(pixelRatio: scale);
       final data = await image.toByteData(format: ui.ImageByteFormat.png);
+      image.dispose();
       final bytes = data!.buffer.asUint8List();
       final name = 'lsb-collage-${DateTime.now().millisecondsSinceEpoch}.png';
       final path = await FilePicker.saveFile(
@@ -429,16 +658,14 @@ class _CollageStudioState extends State<CollageStudio> {
         allowedExtensions: const ['png'],
         bytes: bytes,
       );
-      if (path == null && mounted) {
-        return;
-      }
-      if (path != null && !File(path).existsSync()) {
+      if (path == null) return;
+      if (!File(path).existsSync()) {
         await File(path).writeAsBytes(bytes);
       }
       if (mounted) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text(strings.exportedAs(name))));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(strings.exportedAs(path.split('/').last))),
+        );
       }
     } catch (_) {
       final directory = await getDownloadsDirectory();
@@ -458,64 +685,84 @@ class _CollageStudioState extends State<CollageStudio> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            _Header(
-              onExport: _export,
-              exporting: _exporting,
-              locale: widget.locale,
-              onLocaleChanged: widget.onLocaleChanged,
-            ),
-            Expanded(
-              child: LayoutBuilder(
-                builder: (context, size) {
-                  return SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: SizedBox(
-                      width: size.maxWidth < 1120 ? 1120 : size.maxWidth,
-                      height: size.maxHeight,
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 250,
-                            child: _TemplatesPanel(
-                              selected: _template,
-                              onSelected: _selectTemplate,
-                            ),
+    return CallbackShortcuts(
+      bindings: {
+        const SingleActivator(LogicalKeyboardKey.keyZ, control: true): _undo,
+        const SingleActivator(
+          LogicalKeyboardKey.keyZ,
+          control: true,
+          shift: true,
+        ): _redo,
+        const SingleActivator(LogicalKeyboardKey.keyY, control: true): _redo,
+        const SingleActivator(LogicalKeyboardKey.delete): _clearSelectedSlot,
+      },
+      child: Focus(
+        autofocus: true,
+        child: Scaffold(
+          body: SafeArea(
+            child: Column(
+              children: [
+                _Header(
+                  onExport: _export,
+                  exporting: _exporting,
+                  locale: widget.locale,
+                  onLocaleChanged: widget.onLocaleChanged,
+                ),
+                Expanded(
+                  child: LayoutBuilder(
+                    builder: (context, size) {
+                      return SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: SizedBox(
+                          width: size.maxWidth < 1120 ? 1120 : size.maxWidth,
+                          height: size.maxHeight,
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 250,
+                                child: _TemplatesPanel(
+                                  selectedId: layout.id,
+                                  customSpecs: _customSpecs,
+                                  customTemplates: _customTemplates,
+                                  onSelected: _selectTemplate,
+                                  onCreateCustom: () => _editCustomLayout(),
+                                  onEditCustom: _editCustomLayout,
+                                  onDeleteCustom: _deleteCustomLayout,
+                                ),
+                              ),
+                              Expanded(child: _workspace()),
+                              SizedBox(
+                                width: 290,
+                                child: _SettingsPanel(
+                                  selectedPreset: _preset,
+                                  gap: _gap,
+                                  radius: _radius,
+                                  background: _background,
+                                  selectedPhoto: _selectedSlot == null
+                                      ? null
+                                      : _slots[_selectedSlot!],
+                                  effect: _selectedSlot == null
+                                      ? _normalEffect
+                                      : _effects[_selectedSlot!],
+                                  onPreset: _setPreset,
+                                  onGap: (v) => setState(() => _gap = v),
+                                  onRadius: (v) => setState(() => _radius = v),
+                                  onBackground: _setBackground,
+                                  onEffectPreset: _setEffectPreset,
+                                  onEffectChanged: _updateEffect,
+                                  onSliderStart: _record,
+                                ),
+                              ),
+                            ],
                           ),
-                          Expanded(child: _workspace()),
-                          SizedBox(
-                            width: 290,
-                            child: _SettingsPanel(
-                              selectedPreset: _preset,
-                              gap: _gap,
-                              radius: _radius,
-                              background: _background,
-                              selectedPhoto: _selectedSlot == null
-                                  ? null
-                                  : _slots[_selectedSlot!],
-                              effect: _selectedSlot == null
-                                  ? _normalEffect
-                                  : _effects[_selectedSlot!],
-                              onPreset: (v) => setState(() => _preset = v),
-                              onGap: (v) => setState(() => _gap = v),
-                              onRadius: (v) => setState(() => _radius = v),
-                              onBackground: (v) =>
-                                  setState(() => _background = v),
-                              onEffectPreset: _setEffectPreset,
-                              onEffectChanged: _updateEffect,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -548,13 +795,13 @@ class _CollageStudioState extends State<CollageStudio> {
                 _Pill('${preset.width} × ${preset.height}'),
                 const Spacer(),
                 IconButton(
-                  onPressed: () {},
-                  tooltip: strings.undo,
+                  onPressed: _undoStack.isEmpty ? null : _undo,
+                  tooltip: '${strings.undo} (Ctrl+Z)',
                   icon: const Icon(Icons.undo_rounded, size: 19),
                 ),
                 IconButton(
-                  onPressed: () {},
-                  tooltip: strings.redo,
+                  onPressed: _redoStack.isEmpty ? null : _redo,
+                  tooltip: '${strings.redo} (Ctrl+Shift+Z)',
                   icon: const Icon(Icons.redo_rounded, size: 19),
                 ),
               ],
@@ -586,11 +833,23 @@ class _CollageStudioState extends State<CollageStudio> {
                           color: _background,
                           child: LayoutBuilder(
                             builder: (context, bounds) {
-                              return Stack(
-                                children: [
-                                  for (var i = 0; i < layout.cells.length; i++)
-                                    _cell(i, layout.cells[i], bounds.biggest),
-                                ],
+                              // Shaped layouts don't fill the canvas, so give
+                              // them a margin as wide as the gap between frames.
+                              final margin = layout.aspectRatio == null
+                                  ? 0.0
+                                  : _gap / 2;
+                              final size = bounds
+                                  .deflate(EdgeInsets.all(margin))
+                                  .biggest;
+                              final cells = layout.cellsFor(size);
+                              return Padding(
+                                padding: EdgeInsets.all(margin),
+                                child: Stack(
+                                  children: [
+                                    for (var i = 0; i < cells.length; i++)
+                                      _cell(i, cells[i], size),
+                                  ],
+                                ),
                               );
                             },
                           ),
@@ -613,105 +872,150 @@ class _CollageStudioState extends State<CollageStudio> {
   }
 
   Widget _cell(int index, Rect rect, Size size) {
-    final left = rect.left * size.width + _gap / 2;
-    final top = rect.top * size.height + _gap / 2;
-    final width = rect.width * size.width - _gap;
-    final height = rect.height * size.height - _gap;
     final photo = _slots[index];
-    return Positioned(
-      left: left,
-      top: top,
-      width: width,
-      height: height,
-      child: GestureDetector(
-        onTap: photo == null
-            ? null
-            : () => setState(() => _selectedSlot = index),
-        child: DragTarget<String>(
-          onAcceptWithDetails: (d) => _setSlot(index, d.data),
-          builder: (context, candidates, _) => AnimatedContainer(
-            duration: const Duration(milliseconds: 120),
-            clipBehavior: Clip.antiAlias,
-            decoration: BoxDecoration(
-              color: candidates.isNotEmpty
-                  ? lime.withValues(alpha: .22)
-                  : const Color(0xFFDCD8CF),
-              borderRadius: BorderRadius.circular(_radius),
-              border: Border.all(
-                color: candidates.isNotEmpty || _selectedSlot == index
-                    ? lime
-                    : Colors.black12,
-                width: candidates.isNotEmpty || _selectedSlot == index ? 3 : 1,
-              ),
-            ),
-            child: photo == null
-                ? _exporting
-                      ? const SizedBox.expand()
-                      : Center(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.add_photo_alternate_outlined,
-                                color: Colors.black.withValues(alpha: .32),
-                                size: 30,
-                              ),
-                              const SizedBox(height: 7),
-                              Text(
-                                AppLocalizations.of(
-                                  context,
-                                )!.dropPhoto(index + 1),
-                                style: TextStyle(
-                                  color: Colors.black.withValues(alpha: .4),
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w800,
-                                  letterSpacing: 1,
-                                ),
-                              ),
-                            ],
+    final selected = _selectedSlot == index;
+    final shape = layout.shape;
+    final frame = Rect.fromLTWH(
+      rect.left * size.width + _gap / 2,
+      rect.top * size.height + _gap / 2,
+      math.max(0, rect.width * size.width - _gap),
+      math.max(0, rect.height * size.height - _gap),
+    );
+    return Positioned.fromRect(
+      rect: frame,
+      // Clipping also limits hit testing to the shape, so overlapping
+      // hexagon bounds don't steal each other's clicks and drops.
+      child: ClipPath(
+        clipper: ShapeBorderClipper(shape: cellBorder(shape, _radius)),
+        child: GestureDetector(
+          onTap: photo == null
+              ? null
+              : () => setState(() => _selectedSlot = index),
+          child: DragTarget<Object>(
+            onWillAcceptWithDetails: (d) =>
+                d.data is String ||
+                (d.data is _SlotDrag && (d.data as _SlotDrag).index != index),
+            onAcceptWithDetails: (d) {
+              final data = d.data;
+              if (data is String) _setSlot(index, data);
+              if (data is _SlotDrag) _moveSlot(data.index, index);
+            },
+            builder: (context, candidates, _) {
+              final hovering = candidates.isNotEmpty;
+              final highlight = hovering || selected;
+              return AnimatedContainer(
+                duration: const Duration(milliseconds: 120),
+                decoration: ShapeDecoration(
+                  color: hovering
+                      ? lime.withValues(alpha: .22)
+                      : const Color(0xFFDCD8CF),
+                  shape: cellBorder(shape, _radius),
+                ),
+                // Frame outlines are editor-only; they are left out of exports.
+                foregroundDecoration: _exporting
+                    ? null
+                    : ShapeDecoration(
+                        shape: cellBorder(
+                          shape,
+                          _radius,
+                          BorderSide(
+                            color: highlight ? lime : Colors.black12,
+                            width: highlight ? 3 : 1,
+                            strokeAlign: BorderSide.strokeAlignInside,
                           ),
-                        )
-                : Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      ColorFiltered(
-                        colorFilter: ColorFilter.matrix(
-                          _effectMatrix(_effects[index]),
-                        ),
-                        child: Image.file(
-                          File(photo),
-                          fit: BoxFit.cover,
-                          errorBuilder: (_, _, _) =>
-                              const ColoredBox(color: Color(0xFFCCCCCC)),
                         ),
                       ),
-                      if (!_exporting)
-                        Positioned(
-                          right: 7,
-                          top: 7,
-                          child: Material(
-                            color: Colors.black54,
-                            shape: const CircleBorder(),
-                            child: InkWell(
-                              customBorder: const CircleBorder(),
-                              onTap: () => setState(() {
-                                _slots[index] = null;
-                                _effects[index] = _normalEffect;
-                                if (_selectedSlot == index) {
-                                  _selectedSlot = null;
-                                }
-                              }),
-                              child: const Padding(
-                                padding: EdgeInsets.all(5),
-                                child: Icon(Icons.close, size: 13),
-                              ),
-                            ),
-                          ),
-                        ),
-                    ],
-                  ),
+                child: photo == null
+                    ? _emptyCell(index)
+                    : _photoCell(index, photo, shape),
+              );
+            },
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _emptyCell(int index) {
+    if (_exporting) return const SizedBox.expand();
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(6),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.add_photo_alternate_outlined,
+                color: Colors.black.withValues(alpha: .32),
+                size: 30,
+              ),
+              const SizedBox(height: 7),
+              Text(
+                AppLocalizations.of(context)!.dropPhoto(index + 1),
+                style: TextStyle(
+                  color: Colors.black.withValues(alpha: .4),
+                  fontSize: 10,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _photoCell(int index, String photo, CellShape shape) {
+    final image = ColorFiltered(
+      colorFilter: ColorFilter.matrix(_effectMatrix(_effects[index])),
+      child: Image.file(
+        File(photo),
+        fit: BoxFit.cover,
+        errorBuilder: (_, _, _) => const ColoredBox(color: Color(0xFFCCCCCC)),
+      ),
+    );
+    final removeButton = Material(
+      color: Colors.black54,
+      shape: const CircleBorder(),
+      child: InkWell(
+        customBorder: const CircleBorder(),
+        onTap: () => _clearSlot(index),
+        child: const Padding(
+          padding: EdgeInsets.all(5),
+          child: Icon(Icons.close, size: 13),
+        ),
+      ),
+    );
+    return Draggable<_SlotDrag>(
+      data: _SlotDrag(index),
+      feedback: Opacity(
+        opacity: .85,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.file(
+            File(photo),
+            width: 96,
+            height: 96,
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+      childWhenDragging: Opacity(opacity: .35, child: image),
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          image,
+          if (!_exporting)
+            // Hexagon and circle corners are clipped, so the button moves
+            // in from the top-right corner.
+            if (shape == CellShape.rectangle)
+              Positioned(right: 7, top: 7, child: removeButton)
+            else
+              Align(alignment: const Alignment(0, -.62), child: removeButton),
+        ],
       ),
     );
   }
@@ -831,9 +1135,30 @@ class _Header extends StatelessWidget {
 }
 
 class _TemplatesPanel extends StatelessWidget {
-  const _TemplatesPanel({required this.selected, required this.onSelected});
-  final int selected;
-  final ValueChanged<int> onSelected;
+  const _TemplatesPanel({
+    required this.selectedId,
+    required this.customSpecs,
+    required this.customTemplates,
+    required this.onSelected,
+    required this.onCreateCustom,
+    required this.onEditCustom,
+    required this.onDeleteCustom,
+  });
+  final String selectedId;
+  final List<CustomGridSpec> customSpecs;
+  final List<LayoutTemplate> customTemplates;
+  final ValueChanged<LayoutTemplate> onSelected;
+  final VoidCallback onCreateCustom;
+  final ValueChanged<CustomGridSpec> onEditCustom;
+  final ValueChanged<CustomGridSpec> onDeleteCustom;
+
+  static const _gridDelegate = SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 2,
+    childAspectRatio: .92,
+    crossAxisSpacing: 10,
+    mainAxisSpacing: 10,
+  );
+
   @override
   Widget build(BuildContext context) {
     final strings = AppLocalizations.of(context)!;
@@ -843,36 +1168,70 @@ class _TemplatesPanel extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            strings.layouts,
-            style: const TextStyle(
-              fontSize: 11,
-              fontWeight: FontWeight.w800,
-              color: muted,
-              letterSpacing: 1.4,
-            ),
-          ),
+          Text(strings.layouts, style: sectionLabelStyle),
           const SizedBox(height: 5),
           Text(
             strings.chooseCollage,
             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 14),
+          SizedBox(
+            width: double.infinity,
+            child: OutlinedButton.icon(
+              onPressed: onCreateCustom,
+              icon: const Icon(Icons.hexagon_outlined, size: 18),
+              label: Text(strings.newCustomLayout),
+              style: OutlinedButton.styleFrom(
+                foregroundColor: lime,
+                side: const BorderSide(color: stroke),
+                padding: const EdgeInsets.symmetric(vertical: 14),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(9),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 14),
           Expanded(
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: .92,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-              ),
-              itemCount: templates.length,
-              itemBuilder: (context, i) => _TemplateCard(
-                template: templates[i],
-                name: _layoutName(strings, templates[i].name),
-                selected: selected == i,
-                onTap: () => onSelected(i),
-              ),
+            child: CustomScrollView(
+              slivers: [
+                if (customTemplates.isNotEmpty) ...[
+                  SliverToBoxAdapter(
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(strings.myLayouts, style: sectionLabelStyle),
+                    ),
+                  ),
+                  SliverGrid.builder(
+                    gridDelegate: _gridDelegate,
+                    itemCount: customTemplates.length,
+                    itemBuilder: (context, i) => _TemplateCard(
+                      template: customTemplates[i],
+                      name: customTemplates[i].name,
+                      selected: selectedId == customTemplates[i].id,
+                      onTap: () => onSelected(customTemplates[i]),
+                      onEdit: () => onEditCustom(customSpecs[i]),
+                      onDelete: () => onDeleteCustom(customSpecs[i]),
+                    ),
+                  ),
+                  const SliverToBoxAdapter(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 12),
+                      child: Divider(color: stroke, height: 1),
+                    ),
+                  ),
+                ],
+                SliverGrid.builder(
+                  gridDelegate: _gridDelegate,
+                  itemCount: templates.length,
+                  itemBuilder: (context, i) => _TemplateCard(
+                    template: templates[i],
+                    name: _layoutName(strings, templates[i].name),
+                    selected: selectedId == templates[i].id,
+                    onTap: () => onSelected(templates[i]),
+                  ),
+                ),
+              ],
             ),
           ),
           const Divider(color: stroke),
@@ -909,63 +1268,121 @@ class _TemplateCard extends StatelessWidget {
     required this.name,
     required this.selected,
     required this.onTap,
+    this.onEdit,
+    this.onDelete,
   });
   final LayoutTemplate template;
   final String name;
   final bool selected;
   final VoidCallback onTap;
+  final VoidCallback? onEdit;
+  final VoidCallback? onDelete;
+
   @override
-  Widget build(BuildContext context) => InkWell(
-    onTap: onTap,
-    borderRadius: BorderRadius.circular(10),
-    child: Container(
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: selected ? lime.withValues(alpha: .08) : const Color(0xFF20232A),
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: selected ? lime : stroke,
-          width: selected ? 2 : 1,
-        ),
-      ),
-      child: Column(
-        children: [
-          Expanded(
-            child: LayoutBuilder(
-              builder: (_, b) => Stack(
+  Widget build(BuildContext context) {
+    final strings = AppLocalizations.of(context)!;
+    return Stack(
+      children: [
+        Positioned.fill(
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: selected ? lime.withValues(alpha: .08) : card,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: selected ? lime : stroke,
+                  width: selected ? 2 : 1,
+                ),
+              ),
+              child: Column(
                 children: [
-                  for (final r in template.cells)
-                    Positioned(
-                      left: r.left * b.maxWidth + 1,
-                      top: r.top * b.maxHeight + 1,
-                      width: r.width * b.maxWidth - 3,
-                      height: r.height * b.maxHeight - 3,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          color: selected
-                              ? lime.withValues(alpha: .55)
-                              : const Color(0xFF4A4F59),
-                          borderRadius: BorderRadius.circular(2),
-                        ),
+                  Expanded(
+                    child: LayoutBuilder(
+                      builder: (_, b) => Stack(
+                        children: [
+                          for (final r in template.cellsFor(b.biggest))
+                            Positioned(
+                              left: r.left * b.maxWidth + 1,
+                              top: r.top * b.maxHeight + 1,
+                              width: math.max(0, r.width * b.maxWidth - 3),
+                              height: math.max(0, r.height * b.maxHeight - 3),
+                              child: DecoratedBox(
+                                decoration: ShapeDecoration(
+                                  color: selected
+                                      ? lime.withValues(alpha: .55)
+                                      : const Color(0xFF4A4F59),
+                                  shape: cellBorder(template.shape, 2),
+                                ),
+                              ),
+                            ),
+                        ],
                       ),
                     ),
+                  ),
+                  const SizedBox(height: 7),
+                  Text(
+                    name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: selected ? lime : Colors.white,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
-          const SizedBox(height: 7),
-          Text(
-            name,
-            style: TextStyle(
-              fontSize: 11,
-              color: selected ? lime : Colors.white,
-              fontWeight: FontWeight.w700,
+        ),
+        if (onEdit != null && onDelete != null)
+          Positioned(
+            top: 5,
+            right: 5,
+            child: PopupMenuButton<VoidCallback>(
+              tooltip: name,
+              padding: EdgeInsets.zero,
+              constraints: const BoxConstraints(minWidth: 120),
+              onSelected: (action) => action(),
+              child: Container(
+                width: 24,
+                height: 24,
+                decoration: const BoxDecoration(
+                  color: Colors.black54,
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.more_horiz_rounded, size: 16),
+              ),
+              itemBuilder: (_) => [
+                PopupMenuItem(
+                  value: onEdit,
+                  child: Row(
+                    children: [
+                      const Icon(Icons.edit_outlined, size: 17),
+                      const SizedBox(width: 10),
+                      Text(strings.edit),
+                    ],
+                  ),
+                ),
+                PopupMenuItem(
+                  value: onDelete,
+                  child: Row(
+                    children: [
+                      const Icon(Icons.delete_outline_rounded, size: 17),
+                      const SizedBox(width: 10),
+                      Text(strings.delete),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
-        ],
-      ),
-    ),
-  );
+      ],
+    );
+  }
 }
 
 class _PhotoTray extends StatelessWidget {
@@ -1081,6 +1498,7 @@ class _SettingsPanel extends StatelessWidget {
     required this.onBackground,
     required this.onEffectPreset,
     required this.onEffectChanged,
+    required this.onSliderStart,
   });
   final int selectedPreset;
   final double gap;
@@ -1094,6 +1512,7 @@ class _SettingsPanel extends StatelessWidget {
   final ValueChanged<Color> onBackground;
   final ValueChanged<PhotoEffectPreset> onEffectPreset;
   final ValueChanged<PhotoEffect> onEffectChanged;
+  final VoidCallback onSliderStart;
   @override
   Widget build(BuildContext context) {
     final strings = AppLocalizations.of(context)!;
@@ -1102,15 +1521,7 @@ class _SettingsPanel extends StatelessWidget {
       padding: const EdgeInsets.all(18),
       child: ListView(
         children: [
-          Text(
-            strings.output,
-            style: const TextStyle(
-              fontSize: 11,
-              fontWeight: FontWeight.w800,
-              color: muted,
-              letterSpacing: 1.4,
-            ),
-          ),
+          Text(strings.output, style: sectionLabelStyle),
           const SizedBox(height: 5),
           Text(
             strings.madeForAnywhere,
@@ -1128,7 +1539,7 @@ class _SettingsPanel extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: selectedPreset == i
                         ? lime.withValues(alpha: .09)
-                        : const Color(0xFF20232A),
+                        : card,
                     borderRadius: BorderRadius.circular(9),
                     border: Border.all(
                       color: selectedPreset == i ? lime : stroke,
@@ -1179,6 +1590,7 @@ class _SettingsPanel extends StatelessWidget {
             value: gap,
             max: 32,
             suffix: '${gap.round()} px',
+            onChangeStart: onSliderStart,
             onChanged: onGap,
           ),
           _SliderSetting(
@@ -1186,6 +1598,7 @@ class _SettingsPanel extends StatelessWidget {
             value: radius,
             max: 36,
             suffix: '${radius.round()} px',
+            onChangeStart: onSliderStart,
             onChanged: onRadius,
           ),
           const SizedBox(height: 7),
@@ -1227,15 +1640,7 @@ class _SettingsPanel extends StatelessWidget {
           const SizedBox(height: 18),
           const Divider(color: stroke),
           const SizedBox(height: 10),
-          Text(
-            strings.photoEffects,
-            style: const TextStyle(
-              fontSize: 11,
-              fontWeight: FontWeight.w800,
-              color: muted,
-              letterSpacing: 1.4,
-            ),
-          ),
+          Text(strings.photoEffects, style: sectionLabelStyle),
           const SizedBox(height: 7),
           Text(
             selectedPhoto == null
@@ -1289,6 +1694,7 @@ class _SettingsPanel extends StatelessWidget {
                     min: -1,
                     max: 1,
                     suffix: '${(effect.brightness * 100).round()}%',
+                    onChangeStart: onSliderStart,
                     onChanged: (value) =>
                         onEffectChanged(effect.copyWith(brightness: value)),
                   ),
@@ -1298,6 +1704,7 @@ class _SettingsPanel extends StatelessWidget {
                     min: .5,
                     max: 1.5,
                     suffix: '${(effect.contrast * 100).round()}%',
+                    onChangeStart: onSliderStart,
                     onChanged: (value) =>
                         onEffectChanged(effect.copyWith(contrast: value)),
                   ),
@@ -1306,6 +1713,7 @@ class _SettingsPanel extends StatelessWidget {
                     value: effect.saturation,
                     max: 2,
                     suffix: '${(effect.saturation * 100).round()}%',
+                    onChangeStart: onSliderStart,
                     onChanged: (value) =>
                         onEffectChanged(effect.copyWith(saturation: value)),
                   ),
@@ -1315,6 +1723,7 @@ class _SettingsPanel extends StatelessWidget {
                     min: -1,
                     max: 1,
                     suffix: '${(effect.warmth * 100).round()}%',
+                    onChangeStart: onSliderStart,
                     onChanged: (value) =>
                         onEffectChanged(effect.copyWith(warmth: value)),
                   ),
@@ -1336,6 +1745,7 @@ class _SliderSetting extends StatelessWidget {
     required this.max,
     required this.suffix,
     required this.onChanged,
+    this.onChangeStart,
   });
   final String label;
   final double value;
@@ -1343,6 +1753,7 @@ class _SliderSetting extends StatelessWidget {
   final double max;
   final String suffix;
   final ValueChanged<double> onChanged;
+  final VoidCallback? onChangeStart;
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.only(bottom: 10),
@@ -1358,7 +1769,13 @@ class _SliderSetting extends StatelessWidget {
             Text(suffix, style: const TextStyle(fontSize: 10, color: muted)),
           ],
         ),
-        Slider(value: value, min: min, max: max, onChanged: onChanged),
+        Slider(
+          value: value,
+          min: min,
+          max: max,
+          onChangeStart: onChangeStart == null ? null : (_) => onChangeStart!(),
+          onChanged: onChanged,
+        ),
       ],
     ),
   );

@@ -60,7 +60,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get chooseCollage => 'Выберите коллаж';
 
   @override
-  String get layoutTip => 'Выберите макет и перетащите фотографии в рамки.';
+  String get layoutTip =>
+      'Выберите макет и перетащите фото в рамки. Перетащите размещённое фото на другую рамку, чтобы поменять их местами.';
 
   @override
   String get single => 'Одно фото';
@@ -178,4 +179,68 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get temperature => 'Температура';
+
+  @override
+  String get honeycomb => 'Соты';
+
+  @override
+  String get newCustomLayout => 'Новый свой макет';
+
+  @override
+  String get editCustomLayout => 'Изменить свой макет';
+
+  @override
+  String get myLayouts => 'МОИ МАКЕТЫ';
+
+  @override
+  String get layoutName => 'Название';
+
+  @override
+  String get defaultLayoutName => 'Мой макет';
+
+  @override
+  String get pattern => 'Узор';
+
+  @override
+  String get patternGrid => 'Сетка';
+
+  @override
+  String get patternCircles => 'Круги';
+
+  @override
+  String get rows => 'Строки';
+
+  @override
+  String get columns => 'Столбцы';
+
+  @override
+  String get chooseCells => 'Выбрать ячейки';
+
+  @override
+  String get setOrder => 'Задать порядок';
+
+  @override
+  String get chooseCellsHint =>
+      'Нажмите на ячейку, чтобы добавить её в коллаж или убрать.';
+
+  @override
+  String get setOrderHint =>
+      'Нажимайте на ячейки в том порядке, в котором их нужно заполнять фото. Остальные пойдут следом.';
+
+  @override
+  String get resetOrder => 'Сбросить порядок';
+
+  @override
+  String get useAllCells => 'Использовать все ячейки';
+
+  @override
+  String photoCount(int count) {
+    return 'Фото: $count';
+  }
+
+  @override
+  String get edit => 'Изменить';
+
+  @override
+  String get delete => 'Удалить';
 }

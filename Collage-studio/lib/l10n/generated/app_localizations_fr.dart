@@ -61,7 +61,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get layoutTip =>
-      'Choisissez une mise en page, puis glissez chaque photo dans un cadre.';
+      'Choisissez une mise en page, puis glissez les photos dans les cadres. Glissez une photo placée sur un autre cadre pour les échanger.';
 
   @override
   String get single => 'Unique';
@@ -181,4 +181,68 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get temperature => 'Température';
+
+  @override
+  String get honeycomb => 'Nid d’abeille';
+
+  @override
+  String get newCustomLayout => 'Nouvelle mise en page';
+
+  @override
+  String get editCustomLayout => 'Modifier la mise en page';
+
+  @override
+  String get myLayouts => 'MES MISES EN PAGE';
+
+  @override
+  String get layoutName => 'Nom';
+
+  @override
+  String get defaultLayoutName => 'Ma mise en page';
+
+  @override
+  String get pattern => 'Motif';
+
+  @override
+  String get patternGrid => 'Grille';
+
+  @override
+  String get patternCircles => 'Cercles';
+
+  @override
+  String get rows => 'Lignes';
+
+  @override
+  String get columns => 'Colonnes';
+
+  @override
+  String get chooseCells => 'Choisir les cases';
+
+  @override
+  String get setOrder => 'Définir l’ordre';
+
+  @override
+  String get chooseCellsHint =>
+      'Cliquez sur une case pour l’ajouter au collage ou l’en retirer.';
+
+  @override
+  String get setOrderHint =>
+      'Cliquez sur les cases dans l’ordre où les photos doivent les remplir. Les autres suivront ensuite.';
+
+  @override
+  String get resetOrder => 'Réinitialiser l’ordre';
+
+  @override
+  String get useAllCells => 'Utiliser toutes les cases';
+
+  @override
+  String photoCount(int count) {
+    return 'Photos : $count';
+  }
+
+  @override
+  String get edit => 'Modifier';
+
+  @override
+  String get delete => 'Supprimer';
 }

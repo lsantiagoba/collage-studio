@@ -61,7 +61,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get layoutTip =>
-      'Elige un diseño y arrastra cada foto a cualquier cuadro.';
+      'Elige un diseño y arrastra las fotos a los cuadros. Arrastra una foto colocada sobre otro cuadro para intercambiarlas.';
 
   @override
   String get single => 'Una foto';
@@ -181,4 +181,68 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get temperature => 'Temperatura';
+
+  @override
+  String get honeycomb => 'Panal';
+
+  @override
+  String get newCustomLayout => 'Nuevo diseño personalizado';
+
+  @override
+  String get editCustomLayout => 'Editar diseño personalizado';
+
+  @override
+  String get myLayouts => 'MIS DISEÑOS';
+
+  @override
+  String get layoutName => 'Nombre';
+
+  @override
+  String get defaultLayoutName => 'Mi diseño';
+
+  @override
+  String get pattern => 'Patrón';
+
+  @override
+  String get patternGrid => 'Cuadrícula';
+
+  @override
+  String get patternCircles => 'Círculos';
+
+  @override
+  String get rows => 'Filas';
+
+  @override
+  String get columns => 'Columnas';
+
+  @override
+  String get chooseCells => 'Elegir celdas';
+
+  @override
+  String get setOrder => 'Definir orden';
+
+  @override
+  String get chooseCellsHint =>
+      'Haz clic en una celda para añadirla al collage o quitarla.';
+
+  @override
+  String get setOrderHint =>
+      'Haz clic en las celdas en el orden en que quieres que se llenen con fotos. Las demás seguirán después.';
+
+  @override
+  String get resetOrder => 'Restablecer orden';
+
+  @override
+  String get useAllCells => 'Usar todas las celdas';
+
+  @override
+  String photoCount(int count) {
+    return 'Fotos: $count';
+  }
+
+  @override
+  String get edit => 'Editar';
+
+  @override
+  String get delete => 'Eliminar';
 }

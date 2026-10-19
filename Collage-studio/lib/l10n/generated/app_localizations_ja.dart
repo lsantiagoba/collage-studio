@@ -60,7 +60,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get chooseCollage => 'コラージュを選択';
 
   @override
-  String get layoutTip => 'レイアウトを選び、写真を各フレームへドラッグします。';
+  String get layoutTip =>
+      'レイアウトを選び、写真をフレームへドラッグします。配置済みの写真を別のフレームへドラッグすると入れ替わります。';
 
   @override
   String get single => '1枚';
@@ -178,4 +179,66 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get temperature => '色温度';
+
+  @override
+  String get honeycomb => 'ハニカム';
+
+  @override
+  String get newCustomLayout => '新しいカスタムレイアウト';
+
+  @override
+  String get editCustomLayout => 'カスタムレイアウトを編集';
+
+  @override
+  String get myLayouts => 'マイレイアウト';
+
+  @override
+  String get layoutName => '名前';
+
+  @override
+  String get defaultLayoutName => 'マイレイアウト';
+
+  @override
+  String get pattern => 'パターン';
+
+  @override
+  String get patternGrid => 'グリッド';
+
+  @override
+  String get patternCircles => '円';
+
+  @override
+  String get rows => '行';
+
+  @override
+  String get columns => '列';
+
+  @override
+  String get chooseCells => 'セルを選択';
+
+  @override
+  String get setOrder => '順番を設定';
+
+  @override
+  String get chooseCellsHint => 'セルをクリックしてコラージュに追加・削除します。';
+
+  @override
+  String get setOrderHint => '写真を入れたい順番でセルをクリックします。クリックしていないセルはその後に続きます。';
+
+  @override
+  String get resetOrder => '順番をリセット';
+
+  @override
+  String get useAllCells => 'すべてのセルを使用';
+
+  @override
+  String photoCount(int count) {
+    return '写真: $count';
+  }
+
+  @override
+  String get edit => '編集';
+
+  @override
+  String get delete => '削除';
 }

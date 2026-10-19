@@ -205,7 +205,7 @@ abstract class AppLocalizations {
   /// No description provided for @layoutTip.
   ///
   /// In en, this message translates to:
-  /// **'Pick a layout, then drag each photo into any frame.'**
+  /// **'Pick a layout, then drag photos into frames. Drag a placed photo onto another frame to swap them.'**
   String get layoutTip;
 
   /// No description provided for @single.
@@ -441,6 +441,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Temperature'**
   String get temperature;
+
+  /// No description provided for @honeycomb.
+  ///
+  /// In en, this message translates to:
+  /// **'Honeycomb'**
+  String get honeycomb;
+
+  /// No description provided for @newCustomLayout.
+  ///
+  /// In en, this message translates to:
+  /// **'New custom layout'**
+  String get newCustomLayout;
+
+  /// No description provided for @editCustomLayout.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit custom layout'**
+  String get editCustomLayout;
+
+  /// No description provided for @myLayouts.
+  ///
+  /// In en, this message translates to:
+  /// **'MY LAYOUTS'**
+  String get myLayouts;
+
+  /// No description provided for @layoutName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get layoutName;
+
+  /// No description provided for @defaultLayoutName.
+  ///
+  /// In en, this message translates to:
+  /// **'My layout'**
+  String get defaultLayoutName;
+
+  /// No description provided for @pattern.
+  ///
+  /// In en, this message translates to:
+  /// **'Pattern'**
+  String get pattern;
+
+  /// No description provided for @patternGrid.
+  ///
+  /// In en, this message translates to:
+  /// **'Grid'**
+  String get patternGrid;
+
+  /// No description provided for @patternCircles.
+  ///
+  /// In en, this message translates to:
+  /// **'Circles'**
+  String get patternCircles;
+
+  /// No description provided for @rows.
+  ///
+  /// In en, this message translates to:
+  /// **'Rows'**
+  String get rows;
+
+  /// No description provided for @columns.
+  ///
+  /// In en, this message translates to:
+  /// **'Columns'**
+  String get columns;
+
+  /// No description provided for @chooseCells.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose cells'**
+  String get chooseCells;
+
+  /// No description provided for @setOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Set order'**
+  String get setOrder;
+
+  /// No description provided for @chooseCellsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Click a cell to add it to the collage or remove it.'**
+  String get chooseCellsHint;
+
+  /// No description provided for @setOrderHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Click the cells in the order you want photos to fill them. Cells you don\'t click follow afterwards.'**
+  String get setOrderHint;
+
+  /// No description provided for @resetOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset order'**
+  String get resetOrder;
+
+  /// No description provided for @useAllCells.
+  ///
+  /// In en, this message translates to:
+  /// **'Use all cells'**
+  String get useAllCells;
+
+  /// No description provided for @photoCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Photos: {count}'**
+  String photoCount(int count);
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
 }
 
 class _AppLocalizationsDelegate

@@ -26,22 +26,22 @@ If CMake fails with "CMakeCache.txt directory ... is different", the build cache
 
 ## Architecture
 
-All app code lives in a single file, `lib/main.dart`:
+App code is in `lib/main.dart` plus three files under `lib/src/`:
 
-- **Theme constants** (`ink`, `panel`, `stroke`, `lime`, `muted`): a fixed dark theme with a lime accent.
-- **`CollageApp`** holds only the user-selected `Locale?`. `null` means "follow the system language".
-- **`_CollageStudioState`** owns all editor state:
-  - `_template` / `_preset` are indexes into the top-level `templates` and `presets` lists.
-  - `_photos` is the tray of imported file paths.
-  - `_slots` and `_effects` are parallel lists, one entry per cell of the current layout.
-  - `_selectedSlot` is the photo being edited.
-
-  Switching layouts resizes `_slots`/`_effects` and keeps entries by index. The UI is split into private stateless widgets (`_Header`, `_TemplatesPanel`, `_PhotoTray`, `_SettingsPanel`, …) that receive state and callbacks from this one state class. There is no state management package.
-- **Layouts**: `LayoutTemplate` cells are `Rect`s in normalized 0–1 coordinates. They are scaled to the canvas, which takes its aspect ratio from the selected `ExportPreset`.
-- **Effects**: `PhotoEffect` (brightness/contrast/saturation/warmth + preset enum) is turned into a 5×4 color matrix by `_effectMatrix` and applied with `ColorFiltered`. Editing any slider switches the preset to `custom`.
-- **Export**: the canvas is wrapped in a `RepaintBoundary` (`_canvasKey`). `_export` renders it with `toImage` at `pixelRatio = preset.width / logicalWidth` (clamped 1–6), then saves the PNG through `FilePicker.saveFile`.
-- **Input**: photos come from `file_picker` or OS drag-and-drop through `desktop_drop`.
-- Undo/redo buttons are placeholders (`onPressed: () {}`).
+- **`src/theme.dart`**: a fixed dark theme with a lime accent (`ink`, `panel`, `stroke`, `lime`, `muted`, `card`, `sectionLabelStyle`).
+- **`src/layout.dart`**: the layout model and geometry (re-exported by `main.dart`).
+  - `LayoutTemplate` cells are `Rect`s in normalized 0–1 coordinates, listed in photo order. `shape` (`CellShape.rectangle/hexagon/circle`) sets the frame outline. Rectangle layouts stretch to the canvas. When `aspectRatio` is set, `cellsFor(size)` centers the cells at that ratio, which keeps hexagons and circles regular.
+  - `CustomGridSpec` is a user-built layout: a `rows × columns` grid (max 8×8) in a `GridPattern` (grid, honeycomb or circles). `order` lists the cells that are used, in fill order (cell `i` = row `i ~/ columns`, column `i % columns`). Honeycomb rows are offset by half a cell. `toTemplate()` turns it into a `LayoutTemplate`.
+  - `cellBorder()` / `HexagonBorder` draw and clip frames. Cells are wrapped in `ClipPath(ShapeBorderClipper)` so overlapping hexagon bounds don't steal each other's clicks and drops.
+  - `CustomLayoutStore` saves custom layouts as JSON in `getApplicationSupportDirectory()/custom_layouts.json`.
+- **`src/custom_layout_editor.dart`**: the `CustomLayoutEditor` dialog. It has two modes: choose cells (toggle) and set order (cells you click come first).
+- **`main.dart`**:
+  - `CollageApp` holds only the user-selected `Locale?`. `null` means "follow the system language".
+  - `_CollageStudioState` owns all editor state. `_templateId` is a `LayoutTemplate.id`: the English name for built-ins, `custom:<id>` for custom layouts. `_slots`/`_effects` are parallel lists, one entry per cell. `_fitSlotsToLayout()` resizes them, keeping entries by index. The UI is split into private stateless widgets (`_Header`, `_TemplatesPanel`, `_PhotoTray`, `_SettingsPanel`, …) that get state and callbacks from this class. There is no state management package.
+  - **Undo/redo**: call `_record()` before any change you want to be undoable. It pushes a `_Snapshot` (template, preset, gap, radius, background, photos, slots, effects). Sliders record once on `onChangeStart`. Custom layout definitions are not part of history. Shortcuts: Ctrl+Z, Ctrl+Shift+Z / Ctrl+Y, and Delete (clears the selected frame).
+  - **Effects**: `PhotoEffect` (brightness/contrast/saturation/warmth + preset enum) becomes a 5×4 color matrix in `_effectMatrix`, applied with `ColorFiltered`. Editing any slider switches the preset to `custom`.
+  - **Export**: the canvas is wrapped in a `RepaintBoundary` (`_canvasKey`). `_export` renders it with `toImage` at `pixelRatio = preset.width / logicalWidth` (clamped 1–6) and saves through `FilePicker.saveFile`. While `_exporting` is true, frame outlines, placeholders and remove buttons are hidden.
+  - **Input**: photos come from `file_picker` or OS drag-and-drop (`desktop_drop`). Tray thumbnails drag as `String` paths. Placed photos drag as `_SlotDrag` to swap two frames.
 
 ## Localization
 
@@ -49,7 +49,7 @@ All app code lives in a single file, `lib/main.dart`:
 - Supported: en, es, fr, pt, de, zh, ja, ru, ar.
 - Adding a string means updating all nine ARB files.
 - Adding a language also means adding it to the hardcoded menu list in `_Header`.
-- Layout and preset names are English identifiers in the data lists. They map to translated strings through `_layoutName` (by name) and `_presetName`/`_presetShape` (by index). Adding or reordering a template or preset requires updating these switches, and the tests assert specific English names.
+- Built-in layout and preset names are English identifiers in the data lists. They map to translated strings through `_layoutName` (by name) and `_presetName`/`_presetShape` (by index). Adding or reordering a template or preset requires updating these switches, and the tests assert specific English names. Custom layout names are user text and are shown as-is.
 
 ## Packaging
 

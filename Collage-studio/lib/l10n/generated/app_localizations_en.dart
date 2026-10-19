@@ -60,7 +60,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get chooseCollage => 'Choose a collage';
 
   @override
-  String get layoutTip => 'Pick a layout, then drag each photo into any frame.';
+  String get layoutTip =>
+      'Pick a layout, then drag photos into frames. Drag a placed photo onto another frame to swap them.';
 
   @override
   String get single => 'Single';
@@ -178,4 +179,68 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get temperature => 'Temperature';
+
+  @override
+  String get honeycomb => 'Honeycomb';
+
+  @override
+  String get newCustomLayout => 'New custom layout';
+
+  @override
+  String get editCustomLayout => 'Edit custom layout';
+
+  @override
+  String get myLayouts => 'MY LAYOUTS';
+
+  @override
+  String get layoutName => 'Name';
+
+  @override
+  String get defaultLayoutName => 'My layout';
+
+  @override
+  String get pattern => 'Pattern';
+
+  @override
+  String get patternGrid => 'Grid';
+
+  @override
+  String get patternCircles => 'Circles';
+
+  @override
+  String get rows => 'Rows';
+
+  @override
+  String get columns => 'Columns';
+
+  @override
+  String get chooseCells => 'Choose cells';
+
+  @override
+  String get setOrder => 'Set order';
+
+  @override
+  String get chooseCellsHint =>
+      'Click a cell to add it to the collage or remove it.';
+
+  @override
+  String get setOrderHint =>
+      'Click the cells in the order you want photos to fill them. Cells you don\'t click follow afterwards.';
+
+  @override
+  String get resetOrder => 'Reset order';
+
+  @override
+  String get useAllCells => 'Use all cells';
+
+  @override
+  String photoCount(int count) {
+    return 'Photos: $count';
+  }
+
+  @override
+  String get edit => 'Edit';
+
+  @override
+  String get delete => 'Delete';
 }

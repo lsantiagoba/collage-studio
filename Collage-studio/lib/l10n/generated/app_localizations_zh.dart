@@ -60,7 +60,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get chooseCollage => '选择拼贴布局';
 
   @override
-  String get layoutTip => '选择布局，然后将照片拖入任意相框。';
+  String get layoutTip => '选择布局，然后将照片拖入相框。将已放置的照片拖到另一个相框即可交换位置。';
 
   @override
   String get single => '单张';
@@ -178,4 +178,66 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get temperature => '色温';
+
+  @override
+  String get honeycomb => '蜂巢';
+
+  @override
+  String get newCustomLayout => '新建自定义布局';
+
+  @override
+  String get editCustomLayout => '编辑自定义布局';
+
+  @override
+  String get myLayouts => '我的布局';
+
+  @override
+  String get layoutName => '名称';
+
+  @override
+  String get defaultLayoutName => '我的布局';
+
+  @override
+  String get pattern => '图案';
+
+  @override
+  String get patternGrid => '网格';
+
+  @override
+  String get patternCircles => '圆形';
+
+  @override
+  String get rows => '行';
+
+  @override
+  String get columns => '列';
+
+  @override
+  String get chooseCells => '选择格子';
+
+  @override
+  String get setOrder => '设置顺序';
+
+  @override
+  String get chooseCellsHint => '点击格子即可将其添加到拼贴或从中移除。';
+
+  @override
+  String get setOrderHint => '按照希望照片填充的顺序点击格子，未点击的格子排在后面。';
+
+  @override
+  String get resetOrder => '重置顺序';
+
+  @override
+  String get useAllCells => '使用全部格子';
+
+  @override
+  String photoCount(int count) {
+    return '照片：$count';
+  }
+
+  @override
+  String get edit => '编辑';
+
+  @override
+  String get delete => '删除';
 }

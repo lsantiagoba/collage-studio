@@ -60,7 +60,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get chooseCollage => 'اختر كولاجًا';
 
   @override
-  String get layoutTip => 'اختر تخطيطًا ثم اسحب كل صورة إلى أي إطار.';
+  String get layoutTip =>
+      'اختر تخطيطًا ثم اسحب الصور إلى الإطارات. اسحب صورة موضوعة إلى إطار آخر لتبديلهما.';
 
   @override
   String get single => 'صورة واحدة';
@@ -178,4 +179,68 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get temperature => 'الحرارة';
+
+  @override
+  String get honeycomb => 'خلية نحل';
+
+  @override
+  String get newCustomLayout => 'تخطيط مخصص جديد';
+
+  @override
+  String get editCustomLayout => 'تعديل التخطيط المخصص';
+
+  @override
+  String get myLayouts => 'تخطيطاتي';
+
+  @override
+  String get layoutName => 'الاسم';
+
+  @override
+  String get defaultLayoutName => 'تخطيطي';
+
+  @override
+  String get pattern => 'النمط';
+
+  @override
+  String get patternGrid => 'شبكة';
+
+  @override
+  String get patternCircles => 'دوائر';
+
+  @override
+  String get rows => 'صفوف';
+
+  @override
+  String get columns => 'أعمدة';
+
+  @override
+  String get chooseCells => 'اختيار الخلايا';
+
+  @override
+  String get setOrder => 'تحديد الترتيب';
+
+  @override
+  String get chooseCellsHint =>
+      'انقر على خلية لإضافتها إلى الكولاج أو إزالتها منه.';
+
+  @override
+  String get setOrderHint =>
+      'انقر على الخلايا بالترتيب الذي تريد أن تملأها به الصور. تأتي الخلايا الأخرى بعدها.';
+
+  @override
+  String get resetOrder => 'إعادة ضبط الترتيب';
+
+  @override
+  String get useAllCells => 'استخدام كل الخلايا';
+
+  @override
+  String photoCount(int count) {
+    return 'الصور: $count';
+  }
+
+  @override
+  String get edit => 'تعديل';
+
+  @override
+  String get delete => 'حذف';
 }

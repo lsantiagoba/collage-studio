@@ -60,7 +60,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get chooseCollage => 'Collage auswählen';
 
   @override
-  String get layoutTip => 'Layout auswählen und Fotos in die Rahmen ziehen.';
+  String get layoutTip =>
+      'Layout auswählen und Fotos in die Rahmen ziehen. Ein platziertes Foto auf einen anderen Rahmen ziehen, um sie zu tauschen.';
 
   @override
   String get single => 'Einzelfoto';
@@ -179,4 +180,68 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get temperature => 'Temperatur';
+
+  @override
+  String get honeycomb => 'Wabe';
+
+  @override
+  String get newCustomLayout => 'Neues eigenes Layout';
+
+  @override
+  String get editCustomLayout => 'Eigenes Layout bearbeiten';
+
+  @override
+  String get myLayouts => 'MEINE LAYOUTS';
+
+  @override
+  String get layoutName => 'Name';
+
+  @override
+  String get defaultLayoutName => 'Mein Layout';
+
+  @override
+  String get pattern => 'Muster';
+
+  @override
+  String get patternGrid => 'Raster';
+
+  @override
+  String get patternCircles => 'Kreise';
+
+  @override
+  String get rows => 'Zeilen';
+
+  @override
+  String get columns => 'Spalten';
+
+  @override
+  String get chooseCells => 'Zellen wählen';
+
+  @override
+  String get setOrder => 'Reihenfolge festlegen';
+
+  @override
+  String get chooseCellsHint =>
+      'Zelle anklicken, um sie zur Collage hinzuzufügen oder zu entfernen.';
+
+  @override
+  String get setOrderHint =>
+      'Zellen in der Reihenfolge anklicken, in der sie mit Fotos gefüllt werden sollen. Die übrigen folgen danach.';
+
+  @override
+  String get resetOrder => 'Reihenfolge zurücksetzen';
+
+  @override
+  String get useAllCells => 'Alle Zellen verwenden';
+
+  @override
+  String photoCount(int count) {
+    return 'Fotos: $count';
+  }
+
+  @override
+  String get edit => 'Bearbeiten';
+
+  @override
+  String get delete => 'Löschen';
 }
