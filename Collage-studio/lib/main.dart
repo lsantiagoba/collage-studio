@@ -29,6 +29,8 @@ class PhotoEffect {
     this.contrast = 1,
     this.saturation = 1,
     this.warmth = 0,
+    this.quarterTurns = 0,
+    this.angle = 0,
   });
 
   final PhotoEffectPreset preset;
@@ -37,19 +39,45 @@ class PhotoEffect {
   final double saturation;
   final double warmth;
 
+  /// Clockwise 90° turns, 0–3.
+  final int quarterTurns;
+
+  /// Fine rotation in degrees (-45 to 45), applied after [quarterTurns].
+  final double angle;
+
   PhotoEffect copyWith({
     PhotoEffectPreset? preset,
     double? brightness,
     double? contrast,
     double? saturation,
     double? warmth,
+    int? quarterTurns,
+    double? angle,
   }) => PhotoEffect(
     preset: preset ?? this.preset,
     brightness: brightness ?? this.brightness,
     contrast: contrast ?? this.contrast,
     saturation: saturation ?? this.saturation,
     warmth: warmth ?? this.warmth,
+    quarterTurns: quarterTurns ?? this.quarterTurns,
+    angle: angle ?? this.angle,
   );
+
+  /// This effect's colors with the rotation of [other].
+  PhotoEffect withRotationOf(PhotoEffect other) =>
+      copyWith(quarterTurns: other.quarterTurns, angle: other.angle);
+}
+
+/// How much a photo filling a [size] frame must be scaled so that, rotated by
+/// [degrees], it still covers the whole frame.
+double rotationCoverScale(Size size, double degrees) {
+  if (degrees == 0 || size.isEmpty) return 1;
+  final radians = degrees * math.pi / 180;
+  final cos = math.cos(radians).abs();
+  final sin = math.sin(radians).abs();
+  final w = size.width;
+  final h = size.height;
+  return math.max((w * cos + h * sin) / w, (w * sin + h * cos) / h);
 }
 
 const _normalEffect = PhotoEffect();
@@ -605,13 +633,39 @@ class _CollageStudioState extends State<CollageStudio> {
     if (index == null || _slots[index] == null) return;
     _record();
     setState(() {
+      final current = _effects[index];
       _effects[index] = switch (preset) {
-        PhotoEffectPreset.normal => _normalEffect,
-        PhotoEffectPreset.sepia => _sepiaEffect,
-        PhotoEffectPreset.blue => _blueEffect,
-        PhotoEffectPreset.custom => _effects[index].copyWith(preset: preset),
+        PhotoEffectPreset.normal => _normalEffect.withRotationOf(current),
+        PhotoEffectPreset.sepia => _sepiaEffect.withRotationOf(current),
+        PhotoEffectPreset.blue => _blueEffect.withRotationOf(current),
+        PhotoEffectPreset.custom => current.copyWith(preset: preset),
       };
     });
+  }
+
+  /// Turns the photo in frame [index] by [turns] × 90° (negative = left).
+  void _rotateSlot(int index, int turns) {
+    if (_slots[index] == null) return;
+    _record();
+    setState(() {
+      final effect = _effects[index];
+      _effects[index] = effect.copyWith(
+        quarterTurns: (effect.quarterTurns + turns) % 4,
+      );
+      _selectedSlot = index;
+    });
+  }
+
+  void _rotateSelected(int turns) {
+    final index = _selectedSlot;
+    if (index != null) _rotateSlot(index, turns);
+  }
+
+  /// Slider drags record history once, when the drag starts.
+  void _straighten(double angle) {
+    final index = _selectedSlot;
+    if (index == null || _slots[index] == null) return;
+    setState(() => _effects[index] = _effects[index].copyWith(angle: angle));
   }
 
   /// Slider drags record history once, when the drag starts.
@@ -695,6 +749,10 @@ class _CollageStudioState extends State<CollageStudio> {
         ): _redo,
         const SingleActivator(LogicalKeyboardKey.keyY, control: true): _redo,
         const SingleActivator(LogicalKeyboardKey.delete): _clearSelectedSlot,
+        const SingleActivator(LogicalKeyboardKey.keyR): () =>
+            _rotateSelected(1),
+        const SingleActivator(LogicalKeyboardKey.keyR, shift: true): () =>
+            _rotateSelected(-1),
       },
       child: Focus(
         autofocus: true,
@@ -750,6 +808,8 @@ class _CollageStudioState extends State<CollageStudio> {
                                   onBackground: _setBackground,
                                   onEffectPreset: _setEffectPreset,
                                   onEffectChanged: _updateEffect,
+                                  onRotate: _rotateSelected,
+                                  onStraighten: _straighten,
                                   onSliderStart: _record,
                                 ),
                               ),
@@ -969,25 +1029,40 @@ class _CollageStudioState extends State<CollageStudio> {
   }
 
   Widget _photoCell(int index, String photo, CellShape shape) {
+    final strings = AppLocalizations.of(context)!;
+    final effect = _effects[index];
     final image = ColorFiltered(
-      colorFilter: ColorFilter.matrix(_effectMatrix(_effects[index])),
-      child: Image.file(
-        File(photo),
-        fit: BoxFit.cover,
-        errorBuilder: (_, _, _) => const ColoredBox(color: Color(0xFFCCCCCC)),
-      ),
-    );
-    final removeButton = Material(
-      color: Colors.black54,
-      shape: const CircleBorder(),
-      child: InkWell(
-        customBorder: const CircleBorder(),
-        onTap: () => _clearSlot(index),
-        child: const Padding(
-          padding: EdgeInsets.all(5),
-          child: Icon(Icons.close, size: 13),
+      colorFilter: ColorFilter.matrix(_effectMatrix(effect)),
+      child: LayoutBuilder(
+        builder: (context, box) => Transform.rotate(
+          angle: effect.angle * math.pi / 180,
+          child: Transform.scale(
+            // Zoom in just enough that the tilted photo leaves no gaps.
+            scale: rotationCoverScale(box.biggest, effect.angle),
+            child: RotatedBox(
+              quarterTurns: effect.quarterTurns,
+              child: Image.file(
+                File(photo),
+                fit: BoxFit.cover,
+                errorBuilder: (_, _, _) =>
+                    const ColoredBox(color: Color(0xFFCCCCCC)),
+              ),
+            ),
+          ),
         ),
       ),
+    );
+    final buttons = Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        _MiniButton(
+          icon: Icons.rotate_right_rounded,
+          tooltip: '${strings.rotateRight} (R)',
+          onTap: () => _rotateSlot(index, 1),
+        ),
+        const SizedBox(width: 5),
+        _MiniButton(icon: Icons.close, onTap: () => _clearSlot(index)),
+      ],
     );
     return Draggable<_SlotDrag>(
       data: _SlotDrag(index),
@@ -995,11 +1070,14 @@ class _CollageStudioState extends State<CollageStudio> {
         opacity: .85,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(8),
-          child: Image.file(
-            File(photo),
-            width: 96,
-            height: 96,
-            fit: BoxFit.cover,
+          child: RotatedBox(
+            quarterTurns: effect.quarterTurns,
+            child: Image.file(
+              File(photo),
+              width: 96,
+              height: 96,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ),
@@ -1009,15 +1087,39 @@ class _CollageStudioState extends State<CollageStudio> {
         children: [
           image,
           if (!_exporting)
-            // Hexagon and circle corners are clipped, so the button moves
+            // Hexagon and circle corners are clipped, so the buttons move
             // in from the top-right corner.
             if (shape == CellShape.rectangle)
-              Positioned(right: 7, top: 7, child: removeButton)
+              Positioned(right: 7, top: 7, child: buttons)
             else
-              Align(alignment: const Alignment(0, -.62), child: removeButton),
+              Align(alignment: const Alignment(0, -.62), child: buttons),
         ],
       ),
     );
+  }
+}
+
+class _MiniButton extends StatelessWidget {
+  const _MiniButton({required this.icon, required this.onTap, this.tooltip});
+  final IconData icon;
+  final VoidCallback onTap;
+  final String? tooltip;
+
+  @override
+  Widget build(BuildContext context) {
+    final button = Material(
+      color: Colors.black54,
+      shape: const CircleBorder(),
+      child: InkWell(
+        customBorder: const CircleBorder(),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: Icon(icon, size: 13),
+        ),
+      ),
+    );
+    return tooltip == null ? button : Tooltip(message: tooltip, child: button);
   }
 }
 
@@ -1498,6 +1600,8 @@ class _SettingsPanel extends StatelessWidget {
     required this.onBackground,
     required this.onEffectPreset,
     required this.onEffectChanged,
+    required this.onRotate,
+    required this.onStraighten,
     required this.onSliderStart,
   });
   final int selectedPreset;
@@ -1512,6 +1616,8 @@ class _SettingsPanel extends StatelessWidget {
   final ValueChanged<Color> onBackground;
   final ValueChanged<PhotoEffectPreset> onEffectPreset;
   final ValueChanged<PhotoEffect> onEffectChanged;
+  final ValueChanged<int> onRotate;
+  final ValueChanged<double> onStraighten;
   final VoidCallback onSliderStart;
   @override
   Widget build(BuildContext context) {
@@ -1726,6 +1832,48 @@ class _SettingsPanel extends StatelessWidget {
                     onChangeStart: onSliderStart,
                     onChanged: (value) =>
                         onEffectChanged(effect.copyWith(warmth: value)),
+                  ),
+                  const SizedBox(height: 4),
+                  const Divider(color: stroke),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Text(
+                        strings.rotation,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      const Spacer(),
+                      Text(
+                        '${(effect.quarterTurns * 90 + effect.angle).round()}°',
+                        style: const TextStyle(fontSize: 10, color: muted),
+                      ),
+                      const SizedBox(width: 6),
+                      IconButton(
+                        onPressed: () => onRotate(-1),
+                        tooltip: '${strings.rotateLeft} (Shift+R)',
+                        visualDensity: VisualDensity.compact,
+                        icon: const Icon(Icons.rotate_left_rounded, size: 20),
+                      ),
+                      IconButton(
+                        onPressed: () => onRotate(1),
+                        tooltip: '${strings.rotateRight} (R)',
+                        visualDensity: VisualDensity.compact,
+                        icon: const Icon(Icons.rotate_right_rounded, size: 20),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 6),
+                  _SliderSetting(
+                    label: strings.straighten,
+                    value: effect.angle,
+                    min: -45,
+                    max: 45,
+                    suffix: '${effect.angle.round()}°',
+                    onChangeStart: onSliderStart,
+                    onChanged: onStraighten,
                   ),
                 ],
               ),

@@ -78,5 +78,9 @@
   "photoCount": "Photos: {count}",
   "edit": "Edit",
   "delete": "Delete",
+  "rotation": "Rotation",
+  "rotateLeft": "Rotate left",
+  "rotateRight": "Rotate right",
+  "straighten": "Straighten",
   "@photoCount": {"placeholders": {"count": {"type": "int"}}}
 }

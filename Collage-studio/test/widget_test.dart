@@ -146,4 +146,30 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('DROP PHOTO 4'), findsNothing);
   });
+
+  test('tilted photos are zoomed just enough to cover their frame', () {
+    const frame = Size(300, 200);
+    expect(rotationCoverScale(frame, 0), 1);
+    // At 90° a 3:2 frame needs the photo scaled by 3/2 on its short side.
+    expect(rotationCoverScale(frame, 90), closeTo(1.5, 1e-9));
+    final s = rotationCoverScale(frame, 30);
+    final r = 30 * math.pi / 180;
+    expect(
+      s * 300,
+      greaterThanOrEqualTo(300 * math.cos(r) + 200 * math.sin(r)),
+    );
+    expect(
+      s * 200,
+      greaterThanOrEqualTo(300 * math.sin(r) + 200 * math.cos(r)),
+    );
+    expect(rotationCoverScale(frame, -30), closeTo(s, 1e-9));
+  });
+
+  test('changing the color preset keeps the rotation', () {
+    const tilted = PhotoEffect(quarterTurns: 1, angle: 12, saturation: .3);
+    final normal = const PhotoEffect().withRotationOf(tilted);
+    expect(normal.quarterTurns, 1);
+    expect(normal.angle, 12);
+    expect(normal.saturation, 1);
+  });
 }
